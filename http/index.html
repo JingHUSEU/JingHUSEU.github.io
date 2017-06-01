@@ -1,0 +1,262 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>HTTP--基础</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///http/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///http/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTTP--基础">
+    <meta property="og:description" content="URL与URI的区别。 uniform resource location 统一资源定位符 uniform resource identifier 统一资源标识符 请求报文    响应报文    GET与POST的区别。 使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。 大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。 安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。 GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。 Cookie Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。  持久化 如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。">
+    <meta property="og:url" content="http:///http/">
+    <meta property="article:published_time" content="2017-05-25T08:07:05.000Z">
+    <meta property="article:modified_time" content="2017-05-25T08:07:18.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HTTP--基础">
+    <meta name="twitter:description" content="URL与URI的区别。 uniform resource location 统一资源定位符 uniform resource identifier 统一资源标识符 请求报文    响应报文    GET与POST的区别。 使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。 大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。 安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。 GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。 Cookie Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。  持久化 如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。">
+    <meta name="twitter:url" content="http:///http/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "HTTP--基础",
+    "url": "http:///http/",
+    "datePublished": "2017-05-25T08:07:05.000Z",
+    "dateModified": "2017-05-25T08:07:18.000Z",
+    "description": "URL与URI的区别。 uniform resource location 统一资源定位符 uniform resource identifier 统一资源标识符 请求报文    响应报文    GET与POST的区别。 使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。 大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。 安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。 GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。 Cookie Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。  持久化 如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http nav-current"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">HTTP--基础</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-25">25 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="urluri">URL与URI的区别。</h4>
+
+<ul>
+<li>uniform resource location 统一资源定位符</li>
+<li>uniform resource identifier 统一资源标识符</li>
+</ul>
+
+<h4 id="">请求报文</h4>
+
+<blockquote>
+  <p><img src="/content/images/2017/05/HTTP1.jpg" alt="2" title=""></p>
+</blockquote>
+
+<h4 id="">响应报文</h4>
+
+<blockquote>
+  <p><img src="/content/images/2017/05/HTTP2.jpg" alt="2" title=""></p>
+</blockquote>
+
+<hr>
+
+<h4 id="getpost">GET与POST的区别。</h4>
+
+<ul>
+<li>使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。</li>
+<li>大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。</li>
+<li>安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。</li>
+<li>GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。</li>
+</ul>
+
+<hr>
+
+<h4 id="cookie">Cookie</h4>
+
+<p>Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。 <br>
+<img src="/content/images/2017/05/HTTP3.jpg" alt="" title=""><img src="/content/images/2017/05/HTTP4.jpg" alt="" title=""></p>
+
+<h4 id="">持久化</h4>
+
+<p>如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。　当设置成keep-alive，如上面所示的www.baidu.com的http头部信息所示，就会建立一条持久化的连接。不需要每次都建立连接，再中断。
+<img src="/content/images/2017/05/HTTP5.jpg" alt="" title=""><img src="/content/images/2017/05/HTTP6.jpg" alt="" title=""></p>
+
+<h4 id="">管道化</h4>
+
+<p>如果一个http请求，请求了大量的图片等大文件，那么其他的http请求怎么办呢？http可以一次发送多个http请求，然后等待响应连接。不需要排队等候，这样就加快了http的响应时间。</p>
+
+<h4 id="">内容编码</h4>
+
+<p>由于某些报文的内容过大，因此在传输时，为了减少传输的时间，会采取一些压缩的措施。如上面的报文信息中，Accept-Encoding就定义了内容编码的格式：gzip</p>
+
+<hr>
+
+<h4 id="">其他传输方式</h4>
+
+<ul>
+<li>PUT：传输文件，在请求报文的主体中包含文件内容，然后保存到请求URL指定的位置，有安全问题；</li>
+<li>HEAD：获得报文首部，不返回报文主体部分，用于确认URI的有效性及资源更新的日期时间等；</li>
+<li>DELETE：删除文件，DELETE是与PUT相反的方法，是按请求URI删除指定的资源</li>
+<li>OPYIONS：询问支持的方法，用来查询针对请求URI指定的资源支持的方法</li>
+<li>TRACE：追踪路径，让web服务器端将之前的请求通信还回给客户端的方法，发送请求时，在Max-Frowards首部字段中填入数值，每经过一个服务器端就-1，当数值为0时，停止传输，最后收到服务器返回状态码200 OK的响应</li>
+<li>CONNECT：要求采用隧道协议连接代理，该方法要求在于代理服务器通信时建立隧道，实现用隧道协议进行TCP通信，主要使用SSL（安全套接层）和TLS（传输层安全）协议把通信内容加密后经过网络传输。</li>
+</ul>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=HTTP--%E5%9F%BA%E7%A1%80&amp;url=http:///http/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///http/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///http/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/httpzhuang-tai-ma/">
+        <section class="post">
+            <h2>HTTP状态码</h2>
+            <p>1** 100 (Continue/继续)：如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。 101 (Switching Protocols/转换协议)：指服务器将按照其头信息变为一个不同的协议。…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/js_bom/">
+        <section class="post">
+            <h2>JS--BOM</h2>
+            <p>基本概念 BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。 window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！         window对象 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

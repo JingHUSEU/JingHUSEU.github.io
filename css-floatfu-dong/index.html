@@ -1,0 +1,248 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS--Float</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///css-floatfu-dong/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///css-floatfu-dong/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS--Float">
+    <meta property="og:description" content="浮动的理解 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。 首先，在页面上安置标准流元素； 假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)； 如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。 元素浮动之前，也就是在标准流中，是竖向排列的，而浮动之后可以理解为横向排列。 效果 块状元素，会钻进浮动元素的下面，被浮动元素所覆盖 行内元素，例如文字，则会环绕在浮动元素的周围，为浮动元素留出空间 浮动元素的父元素坍缩 清除浮动的基本方法 clear : none | left | right | both none：默认值，允许两边都可以有浮动对象； left：不允许左边有浮动对象； right：不允许右边有浮动对象； both：不允许有浮动对象。 对于CSS的清除浮动(clear)，一定要牢记：这个规则只能影响使用清除的元素本身，不能影响其他元素。希望移动那个元素，就要在那个元素中添加清除浮动。 闭合浮动">
+    <meta property="og:url" content="http:///css-floatfu-dong/">
+    <meta property="article:published_time" content="2017-05-18T03:09:02.000Z">
+    <meta property="article:modified_time" content="2017-05-18T03:09:02.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS--Float">
+    <meta name="twitter:description" content="浮动的理解 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。 首先，在页面上安置标准流元素； 假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)； 如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。 元素浮动之前，也就是在标准流中，是竖向排列的，而浮动之后可以理解为横向排列。 效果 块状元素，会钻进浮动元素的下面，被浮动元素所覆盖 行内元素，例如文字，则会环绕在浮动元素的周围，为浮动元素留出空间 浮动元素的父元素坍缩 清除浮动的基本方法 clear : none | left | right | both none：默认值，允许两边都可以有浮动对象； left：不允许左边有浮动对象； right：不允许右边有浮动对象； both：不允许有浮动对象。 对于CSS的清除浮动(clear)，一定要牢记：这个规则只能影响使用清除的元素本身，不能影响其他元素。希望移动那个元素，就要在那个元素中添加清除浮动。 闭合浮动">
+    <meta name="twitter:url" content="http:///css-floatfu-dong/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "CSS--Float",
+    "url": "http:///css-floatfu-dong/",
+    "datePublished": "2017-05-18T03:09:02.000Z",
+    "dateModified": "2017-05-18T03:09:02.000Z",
+    "description": "浮动的理解 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。 首先，在页面上安置标准流元素； 假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)； 如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。 元素浮动之前，也就是在标准流中，是竖向排列的，而浮动之后可以理解为横向排列。 效果 块状元素，会钻进浮动元素的下面，被浮动元素所覆盖 行内元素，例如文字，则会环绕在浮动元素的周围，为浮动元素留出空间 浮动元素的父元素坍缩 清除浮动的基本方法 clear : none | left | right | both none：默认值，允许两边都可以有浮动对象； left：不允许左边有浮动对象； right：不允许右边有浮动对象； both：不允许有浮动对象。 对于CSS的清除浮动(clear)，一定要牢记：这个规则只能影响使用清除的元素本身，不能影响其他元素。希望移动那个元素，就要在那个元素中添加清除浮动。 闭合浮动",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat nav-current"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">CSS--Float</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-18">18 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">浮动的理解</h4>
+
+<ul>
+<li>浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。
+<ul><li>首先，在页面上安置标准流元素；</li>
+<li>假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)；</li>
+<li>如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。</li>
+<li>元素浮动之前，也就是在标准流中，是竖向排列的，而浮动之后可以理解为横向排列。</li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="">效果</h4>
+
+<ul>
+<li>块状元素，会钻进浮动元素的下面，被浮动元素所覆盖<img src="/content/images/2017/05/float_1.jpg" alt="A bowl of bananas" title=""></li>
+<li>行内元素，例如文字，则会环绕在浮动元素的周围，为浮动元素留出空间<img src="/content/images/2017/05/float_2.jpg" alt="A bowl of bananas" title=""></li>
+<li>浮动元素的父元素坍缩<img src="/content/images/2017/05/float_3.jpg" alt="A bowl of bananas" title=""></li>
+</ul>
+
+<hr>
+
+<h4 id="">清除浮动的基本方法</h4>
+
+<ul>
+<li>clear : none | left | right | both
+<ul><li>none：默认值，允许两边都可以有浮动对象；</li>
+<li>left：不允许左边有浮动对象；</li>
+<li>right：不允许右边有浮动对象；</li>
+<li>both：不允许有浮动对象。</li></ul></li>
+<li>对于CSS的清除浮动(clear)，一定要牢记：这个规则只能影响使用清除的元素本身，不能影响其他元素。希望移动那个元素，就要在那个元素中添加清除浮动。</li>
+</ul>
+
+<hr>
+
+<h4 id="">闭合浮动</h4>
+
+<ul>
+<li>使浮动元素闭合，从而减少浮动带来的影响
+<ul><li>添加额外标签：在浮动元素末尾添加一个空的标签例如div style="clear:both"；有违结构与表现分离；</li>
+<li>使用 br标签和其自身的 html属性，br 有 clear=“all | left | right | none” 属性</li>
+<li>父元素设置 overflow：hidden；内容增多时候容易造成不会自动换行导致内容被隐藏掉</li>
+<li>父元素也设置浮动，使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body</li>
+<li>使用:after 伪元素</li></ul></li>
+<li>通过对比，我们不难发现，其实以上列举的方法，无非有两类：其一，通过在浮动元素的末尾添加一个空元素，设置 clear：both属性，after伪元素其实也是通过 content 在元素的后面生成了内容为一个点的块级元素；其二，通过设置父元素 overflow 或者display：table 属性来闭合浮动。</li>
+</ul>
+
+<hr>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=CSS--Float&amp;url=http:///css-floatfu-dong/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///css-floatfu-dong/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///css-floatfu-dong/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/css-layout/">
+        <section class="post">
+            <h2>CSS--Layout</h2>
+            <p>两栏布局（左边宽度固定，右边自动适应） 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6)…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/css-ji-chu/">
+        <section class="post">
+            <h2>CSS--基础</h2>
+            <p>盒子模型 W3C盒子模型：内容(content)、填充(padding)、边界(margin)、 边框(border)。 IE盒子模型：content部分把 border 和 padding计算了进去。 选择符 id选择器（ # myid） 类选择器（…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

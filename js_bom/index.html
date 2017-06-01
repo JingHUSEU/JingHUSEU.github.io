@@ -1,0 +1,223 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JS--BOM</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///js_bom/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///js_bom/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JS--BOM">
+    <meta property="og:description" content="基本概念 BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。 window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！         window对象 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。 Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。 Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。 Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。 History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。">
+    <meta property="og:url" content="http:///js_bom/">
+    <meta property="article:published_time" content="2017-05-25T06:45:51.000Z">
+    <meta property="article:modified_time" content="2017-05-25T06:45:51.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JS--BOM">
+    <meta name="twitter:description" content="基本概念 BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。 window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！         window对象 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。 Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。 Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。 Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。 History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。">
+    <meta name="twitter:url" content="http:///js_bom/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "JS--BOM",
+    "url": "http:///js_bom/",
+    "datePublished": "2017-05-25T06:45:51.000Z",
+    "dateModified": "2017-05-25T06:45:51.000Z",
+    "description": "基本概念 BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。 window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！         window对象 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。 Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。 Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。 Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。 History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom nav-current"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">JS--BOM</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-25">25 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">基本概念</h4>
+
+<ul>
+<li>BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。</li>
+<li>window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！
+
+
+<blockquote>
+  <img src="/content/images/2017/05/b1.jpg" alt="" title=""></blockquote></li>
+  </ul>
+  <h4 id="window">window对象</h4>
+
+
+<ul>
+<li>浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。</li>
+<li>Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。</li>
+<li>Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。</li>
+<li>Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。</li>
+<li>History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。</li>
+<li>每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进行访问。document对象可以理解为HTML文件在JavaScript中的一个实例。</li>
+</ul>
+
+<hr>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=JS--BOM&amp;url=http:///js_bom/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///js_bom/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///js_bom/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/http/">
+        <section class="post">
+            <h2>HTTP--基础</h2>
+            <p>URL与URI的区别。 uniform resource location 统一资源定位符 uniform resource identifier 统一资源标识符 请求报文    响应报文    GET与POST的区别。 使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。 大小限制：…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/js_dom-event/">
+        <section class="post">
+            <h2>JS--DOM&amp;Event</h2>
+            <p>JS操作DOM树 创建新元素：document.createElement(elementTagName) 添加：appendChild(newElement)和insertBefore(newElement,beforeWhichElement) 删除：removeChild(element) 先找到父元素，然后删除子元素 移动       复制：cloneNode(…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

@@ -1,0 +1,968 @@
+
+<head>
+    <meta charset="utf-8">
+
+    <title>浏览器渲染及加载</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="canonical" href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="浏览器渲染及加载">
+    <meta property="og:description" content="什么叫加载（下载）？ 加载就是下载html文档的过程，本质是下载 了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。 什么叫渲染（显示）？ 渲染是浏览器根据html文档把html元素显示的过程 了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。 什么叫解析（解释）？ 下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。 了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。 这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。 用户访问网页都发生了什么 DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址； 客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求； 网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器； 网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器； 浏览器解析http">
+    <meta property="og:url" content="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">
+    <meta property="article:published_time" content="2017-05-26T01:19:16.000Z">
+    <meta property="article:modified_time" content="2017-05-26T01:19:16.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="浏览器渲染及加载">
+    <meta name="twitter:description" content="什么叫加载（下载）？ 加载就是下载html文档的过程，本质是下载 了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。 什么叫渲染（显示）？ 渲染是浏览器根据html文档把html元素显示的过程 了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。 什么叫解析（解释）？ 下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。 了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。 这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。 用户访问网页都发生了什么 DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址； 客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求； 网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器； 网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器； 浏览器解析http">
+    <meta name="twitter:url" content="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "浏览器渲染及加载",
+    "url": "http:///liu-lan-qi-xuan-ran-ji-jia-zai/",
+    "datePublished": "2017-05-26T01:19:16.000Z",
+    "dateModified": "2017-05-26T01:19:16.000Z",
+    "description": "什么叫加载（下载）？ 加载就是下载html文档的过程，本质是下载 了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。 什么叫渲染（显示）？ 渲染是浏览器根据html文档把html元素显示的过程 了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。 什么叫解析（解释）？ 下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。 了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。 这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。 用户访问网页都发生了什么 DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址； 客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求； 网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器； 网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器； 浏览器解析http",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,600,400">
+    <style amp-custom>
+        /* ==========================================================================
+           Table of Contents
+           ========================================================================== */
+
+        /*
+
+            0. Normalize
+            1. General
+            2. Utilities
+            3. AMP Post
+            4. Footer
+
+        */
+
+        /* ==========================================================================
+           0. normalize.css v3.0.3 | MIT License | git.io/normalize | (minified)
+           ========================================================================== */
+
+        html {
+            font-family: sans-serif;
+
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+        audio,
+        canvas,
+        progress,
+        video {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+        [hidden],
+        template {
+            display: none;
+        }
+        a {
+            background-color: transparent;
+        }
+        a:active,
+        a:hover {
+            outline: 0;
+        }
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+        b,
+        strong {
+            font-weight: bold;
+        }
+        dfn {
+            font-style: italic;
+        }
+        h1 {
+            margin: 0.67em 0;
+            font-size: 2em;
+        }
+        mark {
+            background: #ff0;
+            color: #000;
+        }
+        small {
+            font-size: 80%;
+        }
+        sub,
+        sup {
+            position: relative;
+            vertical-align: baseline;
+            font-size: 75%;
+            line-height: 0;
+        }
+        sup {
+            top: -0.5em;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        img {
+            border: 0;
+        }
+        amp-img {
+            border: 0;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        figure {
+            margin: 1em 40px;
+        }
+        hr {
+            box-sizing: content-box;
+            height: 0;
+        }
+        pre {
+            overflow: auto;
+        }
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            color: inherit;
+            font: inherit;
+        }
+        button {
+            overflow: visible;
+        }
+        button,
+        select {
+            text-transform: none;
+        }
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            cursor: pointer;
+
+            -webkit-appearance: button;
+        }
+        button[disabled],
+        html input[disabled] {
+            cursor: default;
+        }
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+        input {
+            line-height: normal;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+        input[type="search"] {
+            -webkit-appearance: textfield;
+        }
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        fieldset {
+            margin: 0 2px;
+            padding: 0.35em 0.625em 0.75em;
+            border: 1px solid #c0c0c0;
+        }
+        legend {
+            padding: 0;
+            border: 0;
+        }
+        textarea {
+            overflow: auto;
+        }
+        optgroup {
+            font-weight: bold;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 0;
+        }
+
+
+        /* ==========================================================================
+           1. General - Setting up some base styles
+           ========================================================================== */
+
+        html {
+            max-height: 100%;
+            height: 100%;
+            font-size: 62.5%;
+
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            max-height: 100%;
+            height: 100%;
+            color: #3a4145;
+            background: #f4f8fb;
+            letter-spacing: 0.01rem;
+            font-family: "Merriweather", serif;
+            font-size: 1.8rem;
+            line-height: 1.75em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "kern" 1;
+            -moz-font-feature-settings: "kern" 1;
+            -o-font-feature-settings: "kern" 1;
+        }
+
+        ::-moz-selection {
+            background: #d6edff;
+        }
+
+        ::selection {
+            background: #d6edff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 0.3em 0;
+            color: #2e2e2e;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.15em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -moz-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -o-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+        }
+
+        h1 {
+            text-indent: -2px;
+            letter-spacing: -1px;
+            font-size: 2.6rem;
+        }
+
+        h2 {
+            letter-spacing: 0;
+            font-size: 2.4rem;
+        }
+
+        h3 {
+            letter-spacing: -0.6px;
+            font-size: 2.1rem;
+        }
+
+        h4 {
+            font-size: 1.9rem;
+        }
+
+        h5 {
+            font-size: 1.8rem;
+        }
+
+        h6 {
+            font-size: 1.8rem;
+        }
+
+        a {
+            color: #4a4a4a;
+        }
+
+        a:hover {
+            color: #111;
+        }
+
+        p,
+        ul,
+        ol,
+        dl {
+            margin: 0 0 2.5rem 0;
+            font-size: 1.5rem;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -moz-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -o-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+        }
+
+        ol,
+        ul {
+            padding-left: 2em;
+        }
+
+        ol ol,
+        ul ul,
+        ul ol,
+        ol ul {
+            margin: 0 0 0.4em 0;
+            padding-left: 2em;
+        }
+
+        dl dt {
+            float: left;
+            clear: left;
+            overflow: hidden;
+            margin-bottom: 1em;
+            width: 180px;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        dl dd {
+            margin-bottom: 1em;
+            margin-left: 200px;
+        }
+
+        li {
+            margin: 0.4em 0;
+        }
+
+        li li {
+            margin: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 1.75em 0;
+            padding: 0;
+            height: 1px;
+            border: 0;
+            border-top: #efefef 1px solid;
+        }
+
+        blockquote {
+            box-sizing: border-box;
+            margin: 1.75em 0 1.75em 0;
+            padding: 0 0 0 1.75em;
+            border-left: #4a4a4a 0.4em solid;
+
+            -moz-box-sizing: border-box;
+        }
+
+        blockquote p {
+            margin: 0.8em 0;
+            font-style: italic;
+        }
+
+        blockquote small {
+            display: inline-block;
+            margin: 0.8em 0 0.8em 1.5em;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        blockquote small:before {
+            content: "\2014 \00A0";
+        }
+
+        blockquote cite {
+            font-weight: 700;
+        }
+
+        blockquote cite a {
+            font-weight: normal;
+        }
+
+        mark {
+            background-color: #fdffb6;
+        }
+
+        code,
+        tt {
+            padding: 1px 3px;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 2px;
+            white-space: pre-wrap;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.85em;
+            font-feature-settings: "liga" 0;
+
+            -webkit-font-feature-settings: "liga" 0;
+            -moz-font-feature-settings: "liga" 0;
+        }
+
+        pre {
+            overflow: auto;
+            box-sizing: border-box;
+            margin: 0 0 1.75em 0;
+            padding: 10px;
+            width: 100%;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 3px;
+            white-space: pre;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.9em;
+
+            -moz-box-sizing: border-box;
+        }
+
+        pre code,
+        pre tt {
+            padding: 0;
+            border: none;
+            background: transparent;
+            white-space: pre-wrap;
+            font-size: inherit;
+        }
+
+        kbd {
+            display: inline-block;
+            margin-bottom: 0.4em;
+            padding: 1px 8px;
+            border: #ccc 1px solid;
+            background: #f4f4f4;
+            border-radius: 4px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+            0 1px 0 0 #fff inset;
+            color: #666;
+            text-shadow: #fff 0 1px 0;
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        table {
+            box-sizing: border-box;
+            margin: 1.75em 0;
+            max-width: 100%;
+            width: 100%;
+            background-color: transparent;
+
+            -moz-box-sizing: border-box;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            border-top: #efefef 1px solid;
+            vertical-align: top;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        table th {
+            color: #000;
+        }
+
+        table caption + thead tr:first-child th,
+        table caption + thead tr:first-child td,
+        table colgroup + thead tr:first-child th,
+        table colgroup + thead tr:first-child td,
+        table thead:first-child tr:first-child th,
+        table thead:first-child tr:first-child td {
+            border-top: 0;
+        }
+
+        table tbody + tbody {
+            border-top: #efefef 2px solid;
+        }
+
+        table table table {
+            background-color: #fff;
+        }
+
+        table tbody > tr:nth-child(odd) > td,
+        table tbody > tr:nth-child(odd) > th {
+            background-color: #f6f6f6;
+        }
+
+        table.plain tbody > tr:nth-child(odd) > td,
+        table.plain tbody > tr:nth-child(odd) > th {
+            background: transparent;
+        }
+
+        iframe,
+        amp-iframe,
+        .fluid-width-video-wrapper {
+            display: block;
+            margin: 1.75em 0;
+        }
+
+        /* When a video is inside the fitvids wrapper, drop the
+        margin on the iframe, cause it breaks stuff. */
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper amp-iframe {
+            margin: 0;
+        }
+
+        textarea,
+        select,
+        input {
+            margin: 0 0 5px 0;
+            padding: 6px 9px;
+            width: 260px;
+            outline: 0;
+            border: #e7eef2 1px solid;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.4em;
+            font-weight: 100;
+
+            -webkit-appearance: none;
+        }
+
+        textarea {
+            min-width: 250px;
+            min-height: 80px;
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="week"]:focus,
+        input[type="time"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        textarea:focus {
+            outline: none;
+            outline-width: 0;
+            border: #bbc7cc 1px solid;
+            background: #fff;
+        }
+
+        select {
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        /* ==========================================================================
+           2. Utilities
+           ========================================================================== */
+
+        /* Clears shit */
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+
+        /* ==========================================================================
+           3. AMP Post
+           ========================================================================== */
+
+
+
+        .main-header {
+            position: relative;
+            display: table;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            background: #5ba4e5 no-repeat center center;
+            background-size: cover;
+            text-align: left;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .content {
+            background: #fff;
+            padding-top: 15px;
+        }
+        .blog-title,
+        .content {
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .blog-title a {
+            display: block;
+            padding-right: 16px;
+            padding-left: 16px;
+            height: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            line-height: 50px;
+            font-weight: 600;
+        }
+
+        .post {
+            position: relative;
+            margin-top: 0;
+            margin-right: 16px;
+            margin-left: 16px;
+            padding-bottom: 0;
+            max-width: 100%;
+            border-bottom: #ebf2f6 1px solid;
+            word-wrap: break-word;
+            font-size: 0.95em;
+            line-height: 1.65em;
+        }
+
+        .post-header {
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            margin-bottom: 0;
+        }
+
+        .post-title a {
+            text-decoration: none;
+        }
+
+        .post-meta {
+            display: block;
+            margin: 3px 0 0 0;
+            color: #9eabb3;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.3rem;
+            line-height: 2.2rem;
+        }
+
+        .post-meta a {
+            color: #9eabb3;
+            text-decoration: none;
+        }
+
+        .post-meta a:hover {
+            text-decoration: underline;
+        }
+
+        .post-meta .author {
+            margin: 0;
+            font-size: 1.3rem;
+            line-height: 1.3em;
+        }
+
+        .post-date {
+            display: inline-block;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 1.2rem;
+            line-height: 1.2em;
+        }
+
+        .post-image {
+            margin: 0;
+            padding-top: 3rem;
+            padding-bottom: 30px;
+            border-top: 1px #E8E8E8 solid;
+        }
+
+        /* Keep images centered, and allow images wider than the main
+           text column to break out. */
+        .post-content amp-img,
+        .post-content amp-anim {
+            /* Centers an image by (1) pushing its left edge to the
+               center of its container and (2) shifting the entire image
+               in the opposite direction by half its own width.
+               Works for images that are larger than their containers. */
+            position: relative;
+            left: 50%;
+            display: block;
+            padding: 0;
+            min-width: 0;
+            max-width: 112%; /* fallback when calc doesn't work */
+            width: calc(100% + 32px); /* expand with to image + margins */
+            height: auto;
+            transform: translateX(-50%);
+
+            -webkit-transform: translateX(-50%); /* for Safari and iOS */
+            -ms-transform: translateX(-50%); /* for IE9 */
+        }
+
+        .footnotes {
+            font-size: 1.3rem;
+            line-height: 1.6em;
+            font-style: italic;
+        }
+
+        .footnotes li {
+            margin: 0.6rem 0;
+        }
+
+        .footnotes p {
+            margin: 0;
+        }
+
+        .footnotes p a:last-child {
+            text-decoration: none;
+        }
+
+        /* ==========================================================================
+           4. Footer - The bottom the AMP Post
+           ========================================================================== */
+
+        .site-footer {
+            position: relative;
+            margin: 0 auto 20px auto;
+            padding: 1rem 15px;
+            max-width: 600px;
+            color: rgba(0,0,0,0.5);
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.75em;
+        }
+
+        .site-footer a {
+            color: rgba(0,0,0,0.5);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-footer a:hover {
+            border-bottom: #bbc7cc 1px solid;
+        }
+
+        .poweredby {
+            display: block;
+            float: right;
+            width: 45%;
+            text-align: right;
+        }
+
+        .copyright {
+            display: block;
+            float: left;
+            width: 45%;
+        }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="http://">Smiling Dada</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">浏览器渲染及加载</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="/author/jing/">Jing HU</a></p>
+                    <time class="post-date" datetime="2017-05-26">2017-05-26</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h4 id>什么叫加载（下载）？</h4>
+
+<ul>
+<li>加载就是下载html文档的过程，本质是下载</li>
+<li>了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。</li>
+</ul>
+
+<h4 id>什么叫渲染（显示）？</h4>
+
+<ul>
+<li>渲染是浏览器根据html文档把html元素显示的过程</li>
+<li>了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。</li>
+</ul>
+
+<h4 id>什么叫解析（解释）？</h4>
+
+<ul>
+<li>下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。</li>
+<li>了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。</li>
+</ul>
+
+<p>这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。</p>
+
+<hr>
+
+<h4 id>用户访问网页都发生了什么</h4>
+
+<ul>
+<li>DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址；</li>
+<li>客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求；</li>
+<li>网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器；</li>
+<li>网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器；</li>
+<li>浏览器解析http response，下载html文件，以及html文件内包含的外部引用文件，及文件内涉及的图片或者多媒体文件。</li>
+</ul>
+
+<h4 id>浏览器渲染页面和解析加载页面机制</h4>
+
+<ul>
+<li>当浏览器获得一个html文件时，会“自上而下”加载，并在加载过程中进行解析渲染。
+<ul><li>浏览器会将HTML解析成一个DOM树，DOM 树的构建过程是一个深度遍历过程：当前节点的所有子节点都构建好后才会去构建当前节点的下一个兄弟节点；</li>
+<li>将CSS解析成 CSS Rule Tree 。</li>
+<li>根据DOM树和CSSOM来构造 Rendering Tree。注意：Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。</li>
+<li>有了Render Tree，浏览器已经能知道网页中有哪些节点、各个节点的CSS定义以及他们的从属关系。下一步操作称之为Layout，顾名思义就是计算出每个节点在屏幕中的位置。</li>
+<li>再下一步就是绘制，即遍历render树，并使用UI后端层绘制每个节点。</li></ul></li>
+<li>上述这个过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的html都解析完成之后再去构建和布局render树。它是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。</li>
+</ul>
+
+<h4 id>回流与重绘</h4>
+
+<ul>
+<li>Reflow（回流）浏览器要花时间去渲染，当它发现了某个部分发生了变化影响了布局，那就需要倒回去重新渲染。</li>
+<li>Repaint（重绘）：如果只是改变了某个元素的背景颜色，文字颜色等，不影响元素周围或内部布局的属性，将只会引起浏览器的repaint，重画某一部分。Reflow要比Repaint更花费时间，也就更影响性能。所以在写代码的时候，要尽量避免过多的Reflow。</li>
+<li>reflow的原因：
+<ul><li>页面初始化的时候； </li>
+<li>操作DOM时； </li>
+<li>某些元素的尺寸变了； </li>
+<li>如果 CSS 的属性发生变化了。</li></ul></li>
+<li>减少 reflow/repaint
+<ul><li>不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className。 </li>
+<li>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量。 </li>
+<li>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。 </li>
+<li>千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。</li></ul></li>
+</ul>
+
+<h4 id="html">HTML页面加载和解析流程</h4>
+
+<ul>
+<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件； </li>
+<li>浏览器开始载入html代码，发现<code>＜head＞</code>标签内有一个<code>＜link＞</code>标签引用外部CSS文件； </li>
+<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件； </li>
+<li>浏览器继续载入html中<code>＜body＞</code>部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了； </li>
+<li>浏览器在代码中发现一个<code>＜img＞</code>标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码； </li>
+<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码； </li>
+<li>浏览器发现了一个包含一行JavaScript代码的<code>＜script＞</code>标签，赶快运行它； </li>
+<li>JavaScript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个<code>＜div＞ （style.display=”none”）</code>。突然少了这么一个元素，浏览器不得不重新渲染这部分代码； </li>
+<li>终于等到了<code>＜/html＞</code>的到来，浏览器泪流满面…… </li>
+<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下<code>＜link＞</code>标签的CSS路径； </li>
+<li>浏览器召集了在座的各位<code>＜div＞＜span＞＜ul＞＜li＞</code>们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
+</ul>
+
+<h4 id="css">CSS文件解析</h4>
+
+<ul>
+<li>CSS选择符是从右到左进行匹配的。从右到左！</li>
+<li>所以，<code>#nav li</code> 我们以为这是一条很简单的规则，秒秒钟就能匹配到想要的元素，但是，但是，但是，是从右往左匹配啊，所以，会去找所有的<code>li</code>，然后再去确定它的父元素是不是<code>#nav</code>。</li>
+<li>因此，写css的时候需要注意：
+<ul><li>dom深度尽量浅</li>
+<li>减少inline javascript、css的数量。</li>
+<li>使用现代合法的css属性</li>
+<li>不要为id选择器指定类名或是标签，因为id可以唯一确定一个元素。</li>
+<li>避免后代选择符，尽量使用子选择符。原因：子元素匹配符的概率要大于后代元素匹配符。后代选择符;<code>#tp p{}</code> 子选择符：<code>#tp&gt;p{}</code></li>
+<li>避免使用通配符，举一个例子，<code>.mod .hd *{font-size:14px;}</code> 根据匹配顺序,将首先匹配通配符,也就是说先匹配出通配符,然后匹配<code>.hd</code>（就是要对dom树上的所有节点进行遍历他的父级元素）,然后匹配<code>.mod</code>,这样的性能耗费可想而知.</li></ul></li>
+</ul>
+
+<h4 id="javascript">Javascript的加载和执行的特点</h4>
+
+<ul>
+<li>载入后马上执行；</li>
+<li>执行时会阻塞页面后续的内容（包括页面的渲染、其它资源的下载）。原因：因为浏览器需要一个稳定的DOM树结构，而JS中很有可能有 代码直接改变了DOM树结构，比如使用 document.write 或 appendChild,甚至是直接使用的location.href进行跳转，浏览器为了防止出现JS修 改DOM树，需要重新构建DOM树的情况，所以 就会阻塞其他的下载和呈现。</li>
+<li>减少 JavaScript 对性能的影响的方法
+<ul><li>将所有的script标签放到页面底部，也就是body闭合标签之前，这能确保在脚本执行前页面已经完成了DOM树渲染。</li>
+<li>尽可能地合并脚本。页面中的script标签越少，加载也就越快，响应也越迅速。无论是外链脚本还是内嵌脚本都是如此。</li>
+<li>采用无阻塞下载 JavaScript 脚本的方法：等页面完成加载后，再加载js代码。也就是，在window.load事件发出后开始下载代码。带defer属性的</li></ul></li></ul>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>

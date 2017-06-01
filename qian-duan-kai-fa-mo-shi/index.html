@@ -1,0 +1,269 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>前端开发模式</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///qian-duan-kai-fa-mo-shi/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///qian-duan-kai-fa-mo-shi/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="前端开发模式">
+    <meta property="og:description" content="工作模式 图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。 View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。 MVC 把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。 用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。 把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。 Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain">
+    <meta property="og:url" content="http:///qian-duan-kai-fa-mo-shi/">
+    <meta property="article:published_time" content="2017-05-26T01:01:22.000Z">
+    <meta property="article:modified_time" content="2017-05-26T01:02:31.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="前端开发模式">
+    <meta name="twitter:description" content="工作模式 图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。 View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。 MVC 把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。 用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。 把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。 Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain">
+    <meta name="twitter:url" content="http:///qian-duan-kai-fa-mo-shi/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "前端开发模式",
+    "url": "http:///qian-duan-kai-fa-mo-shi/",
+    "datePublished": "2017-05-26T01:01:22.000Z",
+    "dateModified": "2017-05-26T01:02:31.000Z",
+    "description": "工作模式 图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。 View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。 MVC 把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。 用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。 把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。 Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav- nav-current"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">前端开发模式</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-26">26 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">工作模式</h4>
+
+<ul>
+<li>图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。</li>
+<li>用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。</li>
+<li>View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。<img src="/content/images/2017/05/M1.jpg" alt="" title=""></li>
+</ul>
+
+<hr>
+
+<h4 id="mvc">MVC</h4>
+
+<ul>
+<li>把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。</li>
+<li>用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。
+<ul><li>把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。</li>
+<li>Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain Model是不一样的。<img src="/content/images/2017/05/M2.jpg" alt="" title=""></li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="mvp">MVP</h4>
+
+<ul>
+<li>MVP打破了View原来对于Model的依赖，其余的依赖关系和MVC模式一致。</li>
+<li>用户对View的操作都会从View交移给Presenter。Presenter同样的会执行相应的业务逻辑，并且对Model进行相应的操作；而这时候Model也是通过观察者模式把自己变更的消息传递出去，但是是传给Presenter而不是View。Presenter获取到Model变更的消息以后，通过View提供的接口更新界面。
+<ul><li>便于测试。Presenter对View是通过接口进行，在对Presenter进行不依赖UI环境的单元测试的时候。可以通过模拟一个View对象，这个对象只需要实现了View的接口即可。然后依赖注入到Presenter中，单元测试的时候就可以完整的测试Presenter业务逻辑的正确性；View可以进行组件化。在MVP当中，View不依赖Model。这样就可以让View从特定的业务场景中脱离出来，可以说View可以做到对业务逻辑完全无知。它只需要提供一系列接口提供给上层操作。这样就可以做高度可复用的View组件。</li>
+<li>Presenter中除了业务逻辑以外，还有大量的View-&gt;Model，Model-&gt;View的手动同步逻辑，造成Presenter比较笨重，维护起来会比较困难。<img src="/content/images/2017/05/M3.jpg" alt="" title=""></li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="mvvm">MVVM</h4>
+
+<ul>
+<li>可以看作是一种特殊的MVP（Passive View）模式，或者说是对MVP模式的一种改良。
+<ul><li>MVVM的调用关系和MVP一样。但是，在ViewModel当中会有一个叫Binder，或者是Data-binding engine的东西。以前全部由Presenter负责的View和Model之间数据同步操作交由给Binder处理。你只需要在View的模版语法当中，指令式地声明View上的显示的内容是和Model的哪一块数据绑定的。当ViewModel对进行Model更新的时候，Binder会自动把数据更新到View上去，当用户对View进行操作（例如表单输入），Binder也会自动把数据更新到Model上去。这种方式称为：Two-way data-binding，双向数据绑定。可以简单而不恰当地理解为一个模版引擎，但是会根据数据变更实时渲染。</li>
+<li>MVVM把View和Model的同步逻辑自动化了。以前Presenter负责的View和Model同步不再手动地进行操作，而是交由框架所提供的Binder进行负责。只需要告诉Binder，View显示的数据对应的是Model哪一部分即可。</li>
+<li>提高可维护性。解决了MVP大量的手动View和Model同步的问题，提供双向绑定机制。提高了代码的可维护性。简化测试。因为同步逻辑是交由Binder做的，View跟着Model同时变更，所以只需要保证Model的正确性，View就正确。大大减少了对View同步更新的测试。</li>
+<li>过于简单的图形界面不适用，或说牛刀杀鸡。对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高。数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的。<img src="/content/images/2017/05/M4.jpg" alt="" title=""></li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="spa">SPA</h4>
+
+<ul>
+<li>single-page application，它将所有的活动局限于一个Web页面中，仅在该Web页面初始化时加载相应的HTML、JavaScript 和 CSS。</li>
+<li>一旦页面加载完成了，SPA不会因为用户的操作而进行页面的重新加载或跳转。而是利用 JavaScript 动态的变换HTML的内（采用的是div切换显示和隐藏），从而实现UI与用户的交互。由于避免了页面的重新加载，SPA 可以提供较为流畅的用户体验。</li>
+<li>得益于ajax，我们可以实现无跳转刷新，又多亏了浏览器的histroy机制，我们用hash的变化从而可以实现推动界面变化。
+<ul><li>通过hashchange事件，我们可以监视#后面字符，一旦发生改变，就会触发此事件，也是大家常说的URL 的锚部分。</li>
+<li>局部刷新，这属于AJAX（阿贾克斯）的内容</li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="">前端模板</h4>
+
+<p></p><ul>
+<li>将 HTML 代码（View 层）和 JS 代码（Controller 层）混杂在了一起，UI 与逻辑代码混杂在一起，阅读起来会非常吃力。一旦业务复杂起来，或者多人维护的情况下，几乎会失控。
+*而且如果需要拼接的 HTML 代码里有很多引号的话（比如有大量的 href 属性，src 属性），那么就非常容易出错了（这样干过的应该深有体会）。这样一来，如果前端需要改 HTML 代码，只需要改模板即可。这样做的优点很明显，前端 UI 和逻辑代码不再混杂，阅读体验良好，改动起来也方便了许多。
+
+<blockquote>
+  <p><img src="/content/images/2017/05/M5.jpg" alt="" title=""></p>
+  
+  <img src="/content/images/2017/05/m6.jpg" alt="" title=""></blockquote></li>
+  </ul>
+  <hr>
+
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F&amp;url=http:///qian-duan-kai-fa-mo-shi/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///qian-duan-kai-fa-mo-shi/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///qian-duan-kai-fa-mo-shi/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/liu-lan-qi-xuan-ran-ji-jia-zai/">
+        <section class="post">
+            <h2>浏览器渲染及加载</h2>
+            <p>什么叫加载（下载）？ 加载就是下载html文档的过程，本质是下载 了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。 什么叫渲染（显示）？ 渲染是浏览器根据html文档把html元素显示的过程 了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。 什么叫解析（解释）…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/qian-hou-duan-lian-he-kai-fa/">
+        <section class="post">
+            <h2>前后端联合开发</h2>
+            <p>开发流程 Front-end Integrated Solution（前端集成解决方案） 规范与设计 技术选型 选择前端模块化框架（seajs, requirejs, ...） 选择前端基础库（jquery, tangram, ...） 选择模板语言（php, smarty, ...） 选择模板插件（xss修复） 自动化与拆分…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

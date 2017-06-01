@@ -1,0 +1,264 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS--BFC</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///css-bfc/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///css-bfc/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS--BFC">
+    <meta property="og:description" content='BFC(Block formatting context) 直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 生成元素 根元素 float属性不为none position为absolute或fixed display为inline-block, table-cell, table-caption, flex, inline-flex overflow不为visible Box CSS布局的基本单位，元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。 block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block'>
+    <meta property="og:url" content="http:///css-bfc/">
+    <meta property="article:published_time" content="2017-05-18T06:55:31.000Z">
+    <meta property="article:modified_time" content="2017-05-18T06:55:31.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS--BFC">
+    <meta name="twitter:description" content='BFC(Block formatting context) 直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 生成元素 根元素 float属性不为none position为absolute或fixed display为inline-block, table-cell, table-caption, flex, inline-flex overflow不为visible Box CSS布局的基本单位，元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。 block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block'>
+    <meta name="twitter:url" content="http:///css-bfc/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "CSS--BFC",
+    "url": "http:///css-bfc/",
+    "datePublished": "2017-05-18T06:55:31.000Z",
+    "dateModified": "2017-05-18T06:55:31.000Z",
+    "description": "BFC(Block formatting context) 直译为&quot;块级格式化上下文&quot;。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 生成元素 根元素 float属性不为none position为absolute或fixed display为inline-block, table-cell, table-caption, flex, inline-flex overflow不为visible Box CSS布局的基本单位，元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。 block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc nav-current"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">CSS--BFC</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-18">18 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="bfcblockformattingcontext">BFC(Block formatting context)</h4>
+
+<ul>
+<li>直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
+<li>生成元素
+<ul><li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="box">Box</h4>
+
+<ul>
+<li>CSS布局的基本单位，元素的类型和 display 属性，决定了这个 Box 的类型。</li>
+<li>不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。
+<ul><li>block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；</li>
+<li>inline-level box:display 属性为 inline, inline-block, inline-table 的元素，会生成 inline-level box。并且参与 inline formatting context；</li>
+<li>run-in box: css3 中才有， 这儿先不讲了。</li></ul></li>
+<li>Formatting Context：一个决定如何渲染文档的容器，它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context (简称IFC)。</li>
+</ul>
+
+<hr>
+
+<h4 id="bfc">BFC布局规则</h4>
+
+<ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
+</ul>
+
+<hr>
+
+<h4 id="bfc">BFC作用及原理</h4>
+
+<ul>
+<li>自适应两栏布局 float: left; overflow: hidden;</li>
+<li>清除内部浮动 overflow: hidden;</li>
+<li>防止垂直 margin 重叠 </li>
+<li>因为BFC内部的元素和外部的元素绝对不会互相影响，因此， 当BFC外部存在浮动时，它不应该影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</li>
+</ul>
+
+<hr>
+
+<h4 id="margin">Margin垂直塌陷</h4>
+
+<ul>
+<li>当两个块框上下毗邻时，两者之间的margin会塌陷并尺寸值取较大的那个外边距。 <br>
+当两个块级框是父子关系时，也会在垂直方向发生margin塌陷，取值依然是较大的那个。</li>
+<li>块级框自身发生collapce现象：即当垂直padding和height为零时，上下外边距会发生塌陷</li>
+<li>解决方案
+<ul><li>为父盒子设置border，为外层添加border后父子盒子就不是真正意义上的贴合。</li>
+<li>为父盒子添加overflow：hidden；</li>
+<li>为父盒子设定padding值；添加空div清理浮动；利用clear属性清除浮动或者使父容器形成BFC。</li></ul></li>
+</ul>
+
+<hr>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=CSS--BFC&amp;url=http:///css-bfc/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///css-bfc/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///css-bfc/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/css-draw/">
+        <section class="post">
+            <h2>CSS--Animation</h2>
+            <p>Transitions 平滑的改变CSS的值          Transforms 拉伸，压缩，旋转，偏移          Animation 会在每个关键帧之间插入补间动画，所以动画效果是连贯性的…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/css-layout/">
+        <section class="post">
+            <h2>CSS--Layout</h2>
+            <p>两栏布局（左边宽度固定，右边自动适应） 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6)…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

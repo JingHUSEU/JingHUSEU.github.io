@@ -1,0 +1,1567 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Smiling Dada</title><description>Thoughts, stories and ideas.</description><link>http:///</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 26 May 2017 02:35:20 GMT</lastBuildDate><atom:link href="http:///rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>ES6新特性</title><description>&lt;h4 id="ecmascript2015es6"&gt;ECMAScript 2015（ES6）的十大特征&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;默认参数：&lt;code&gt;var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;模板对象：&lt;code&gt;var name = 'Your name is ${first} ${last}.'&lt;/code&gt;; 反引号&lt;/li&gt;
+&lt;li&gt;多行字符串：反引号&lt;/li&gt;
+&lt;li&gt;解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es1.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;箭头函数：箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定，完全修复了this的指向，this总是指向词法作用域。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Promises&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es2.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;&lt;li&gt;异步方法调用中，往往会出现回调函数一环扣一环的情况。这种情况导致了回调金字塔问题的出现。不仅代码写起来费劲又不美观，而且问题复杂的时候，&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///es6xin-te-xing/</link><guid isPermaLink="false">c9f4d983-653c-45d7-81a2-6d61d0a56d10</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 01:56:54 GMT</pubDate><content:encoded>&lt;h4 id="ecmascript2015es6"&gt;ECMAScript 2015（ES6）的十大特征&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;默认参数：&lt;code&gt;var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;模板对象：&lt;code&gt;var name = 'Your name is ${first} ${last}.'&lt;/code&gt;; 反引号&lt;/li&gt;
+&lt;li&gt;多行字符串：反引号&lt;/li&gt;
+&lt;li&gt;解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es1.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;箭头函数：箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定，完全修复了this的指向，this总是指向词法作用域。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Promises&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es2.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;&lt;li&gt;异步方法调用中，往往会出现回调函数一环扣一环的情况。这种情况导致了回调金字塔问题的出现。不仅代码写起来费劲又不美观，而且问题复杂的时候，阅读代码的人也难以理解。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;三种状态：Fulfilled成功、Rejected失败、Pending为 Promise 对象实例创建时候的初始状态，待执行；&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es3.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ajax操作Promise化，可以实现链式使用。避免了传统的只能使用回调的麻烦。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Promise实现异步任务顺序执行&lt;/li&gt;
+&lt;li&gt;Promise实现异步任务并行执行&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;顺序执行效率低，并行执行但是需要所有的数据加载完成才能开始渲染，并行加载顺序渲染。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es4.jpg" alt="" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/es5.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第一步，加载了story.json的数据；第二步，把数据转换成JSON格式；第三步，把JSON数据打印出来。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/es6.jpg" alt="" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/es7.jpg" alt="" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/es8.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;块级作用域
+&lt;ul&gt;&lt;li&gt;let声明的变量只在块级有效。let没有‘变量提升’的特性，而却有‘暂时性死区（temporal dead zone）’的特性。&lt;/li&gt;
+&lt;li&gt;const命令与let命令一样，声明的变量，其作用域都是块级。所以const遵循的规则与let相差无二，只是，const是用来声明恒定变量的。且用const声明恒定变量，声明的同时就必须赋值，否则会报错。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;类
+&lt;ul&gt;&lt;li&gt;类的所有实例共享一个原型对象。&lt;/li&gt;
+&lt;li&gt;不存在变量提升&lt;/li&gt;
+&lt;li&gt;私有方法添加下划线&lt;/li&gt;
+&lt;li&gt;类的方法内部如果含有this，它默认指向类的实例&lt;/li&gt;
+&lt;li&gt;继承extends，子类必须在constructor方法中调用super方法，否则新建实例时会报错。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;模块
+&lt;ul&gt;&lt;li&gt;JS是解释型语言，边加载边运行，后续脚本运行时，这些脚本所依赖的一切必须已经加载完毕；JS脚本加载时会阻塞浏览器，如果加载的JS很多很大，浏览器会卡住，带来很差的用户体验；通过调整script标签顺序可以修改JS模块之间的依赖，然而当模块很多时，这种做法就不可用了。&lt;/li&gt;
+&lt;li&gt;AMD模块（RequireJS）、CommonJS模块（Node.js）、CMD(SeaJS)&lt;/li&gt;
+&lt;li&gt;导出export&lt;/li&gt;
+&lt;li&gt;导入import&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>经典面试</title><description>&lt;h4 id="regexp"&gt;RegExp&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var expression = /pattern /flags&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;匹配模式（pattern） &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/mian1.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;去掉空格、回车、制表符&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;str.replace(/(^\s*)|(\s*$)/g, "")&lt;/code&gt;：&lt;code&gt;(\s*)&lt;/code&gt;表示连续空格的字符串、&lt;code&gt;^&lt;/code&gt;表示以开始、&lt;code&gt;$&lt;/code&gt;表示以结尾；&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;jquery&lt;/code&gt;的&lt;code&gt;$.trim()&lt;/code&gt;方法&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="jquery"&gt;JQuery&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ready&lt;/li&gt;
+&lt;li&gt;插件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;跨域处理&lt;/h4&gt;
+
+&lt;h4 id="http"&gt;HTTP请求、状态码&lt;/h4&gt;
+
+&lt;h4 id=""&gt;性能优化&lt;/h4&gt;
+
+&lt;h4 id="json"&gt;JSON&lt;/h4&gt;
+
+&lt;h4 id=""&gt;兼容性问题&lt;/h4&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;图片延迟加载&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;原理：页面可见区域以下的图片先不加载，等到用户向下滚动到图片位置时，再进行加载。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Js原生方法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///jing-dian-mian-shi/</link><guid isPermaLink="false">307c8840-5211-4ad1-bddc-3fe27174b5b3</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 01:37:46 GMT</pubDate><content:encoded>&lt;h4 id="regexp"&gt;RegExp&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var expression = /pattern /flags&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;匹配模式（pattern） &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/mian1.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;去掉空格、回车、制表符&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;str.replace(/(^\s*)|(\s*$)/g, "")&lt;/code&gt;：&lt;code&gt;(\s*)&lt;/code&gt;表示连续空格的字符串、&lt;code&gt;^&lt;/code&gt;表示以开始、&lt;code&gt;$&lt;/code&gt;表示以结尾；&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;jquery&lt;/code&gt;的&lt;code&gt;$.trim()&lt;/code&gt;方法&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="jquery"&gt;JQuery&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ready&lt;/li&gt;
+&lt;li&gt;插件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;跨域处理&lt;/h4&gt;
+
+&lt;h4 id="http"&gt;HTTP请求、状态码&lt;/h4&gt;
+
+&lt;h4 id=""&gt;性能优化&lt;/h4&gt;
+
+&lt;h4 id="json"&gt;JSON&lt;/h4&gt;
+
+&lt;h4 id=""&gt;兼容性问题&lt;/h4&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;图片延迟加载&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;原理：页面可见区域以下的图片先不加载，等到用户向下滚动到图片位置时，再进行加载。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Js原生方法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+    var imgs = document.getElementsByTagName('img');
+    // 获取视口高度与滚动条的偏移量
+    function lazyload(){
+        var scrollTop = window.pageYOffset 
+            || document.documentElement.scrollTop 
+            || document.body.scrollTop;
+        var viewportSize = window.innerHeight 
+            || document.documentElement.clientHeight 
+            || document.body.clientHeight;
+        for(var i=0; i&amp;lt;imgs.length; i++) {
+            var x =scrollTop+viewportSize-imgs[i].offsetTop;
+            if(x&amp;gt;0){
+                imgs[i].src = imgs[i].getAttribute('loadpic'); }}}
+        setInterval(lazyload,1000);
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;jQuery插件lazyload&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$("img.lazy").lazyload({
+    placeholder : "img/grey.gif", // placeholder值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
+    effect: "fadeIn", // 载入使用何种效show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
+    threshold: 200, // threshold,值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉
+    event: 'click',  // 事件触发时才加载，值click(点击),mouseover(鼠标划过),sporty(运动的),foobar(…).可以实现鼠标莫过或点击图片才开始加载
+    container: $("#container"),  // 对某容器中的图片实现效果,值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
+    failurelimit : 10 //值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;二维码扫描后跳转&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;微信登录的二维码实际上是将一个URL转换成二维码的形式，而通过微信客户端扫码后，无非就是打开了这个url, 我捕捉到的微信二维码的url为&lt;code&gt;https://login.weixin.qq.com/l/YdmTu30I5A==&lt;/code&gt; ，这个url里的&lt;code&gt;YdmTu30I5A==&lt;/code&gt;代表的是本次会话的唯一ID, 这个有点儿类似浏览器里的session id，通过这个ID,微信就能定向将确认结果反馈到网页上。&lt;/li&gt;
+&lt;li&gt;服务器收到了登录信息和sessionID后就可以确认两件事：一是用来确认登录的客户端的用户是验证过的；二是通过session ID服务器知道将反馈结果推送到哪个网页。&lt;/li&gt;
+&lt;li&gt;web实时推送技术，使用推送技术可以节约服务器端和客户端的资源，可以稳定地推送和接收任何消息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;前端路由&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;路由是根据不同的 url 地址展示不同的内容或页面，前端路由就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。&lt;/li&gt;
+&lt;li&gt;优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户&lt;/li&gt;
+&lt;li&gt;缺点：使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存；单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动的位置。&lt;/li&gt;
+&lt;li&gt;原理：当 url 的 hash 发生变化时，触发 hashchange 注册的回调，回调中去进行不同的操作，进行不同的内容的展示。&lt;/li&gt;
+&lt;li&gt;后端路由：每跳转到不同的URL，都是重新访问服务端，然后服务端返回页面，页面也可以是服务端获取数据，然后和模板组合，返回HTML，也可以是直接返回模板HTML，然后由前端JS再去请求数据，使用前端模板和数据进行组合，生成想要的HTML。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;函数声明&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;var aaa=function(){...}：var 方式定义的函数，不能先调用函数，后声明，只能先声明函数，然后调用。&lt;/li&gt;
+&lt;li&gt;function aaa(){...}：function方式定义函数可以先调用，后声明。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;手写盒子模型中&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;获取盒子内子节点的class样式，盒子内节点的类型不可知&lt;img src="http:///content/images/2017/05/mian2.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="js"&gt;JS底层实现原理&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ECMAScript（核心）：JavaScript 语言基础；规定了 JavaScript 脚本的核心语法，如 数据类型、关键字、保留字、运算符、对象和语句等，它不属于任何浏览器。&lt;/li&gt;
+&lt;li&gt;DOM（文档对象模型）：规定了访问HTML和XML的接口；“ Document Object Model ”的缩写，简称“ 文件对象模型 ”，由W3C制定规范。定义了 JavaScript 操作 HTML 文档的接口，提供了访问 HTML 文档（如body、form、div、textarea等）的途径以及操作方法。&lt;/li&gt;
+&lt;li&gt;BOM（浏览器对象模型）：提供了独立于内容而在浏览器窗口之间进行交互的对象和方法。Browser Object Model ”的缩写，简称“ 浏览器对象模型 ”。BOM 定义了 JavaScript 操作浏览器的接口，提供了访问某些功能（如浏览器窗口大小、版本信息、浏览历史记录等）的途径以及操作方法。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>前端框架</title><description>&lt;h4 id="nodejs"&gt;Node.js&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。&lt;/li&gt;
+&lt;li&gt;nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。&lt;/li&gt;
+&lt;li&gt;Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。&lt;/li&gt;
+&lt;li&gt;Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="grunt"&gt;Grunt&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;自动化。&lt;/li&gt;
+&lt;li&gt;对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。&lt;/li&gt;
+&lt;li&gt;当你在 Gruntfile 文件正确配置好了任务，任务运行器就会自动帮你或你的小组完成大部分无聊的工作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;模块化工具&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;requirejs、seajs&lt;/li&gt;
+&lt;li&gt;将一些属性比较类似和行为比较类似的内容放在同一个js文件里面，把这个js文件称为模块，了每个js文件只关注与自身有关的事情，让每个js文件各行其职；&lt;/li&gt;
+&lt;li&gt;MVC：veiw ( html + css&lt;/li&gt;&lt;/ul&gt;</description><link>http:///qian-duan-kuang-jia/</link><guid isPermaLink="false">1e23e3e3-08f3-492c-b7fe-f822fa7631bf</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 01:25:27 GMT</pubDate><content:encoded>&lt;h4 id="nodejs"&gt;Node.js&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。&lt;/li&gt;
+&lt;li&gt;nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。&lt;/li&gt;
+&lt;li&gt;Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。&lt;/li&gt;
+&lt;li&gt;Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="grunt"&gt;Grunt&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;自动化。&lt;/li&gt;
+&lt;li&gt;对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。&lt;/li&gt;
+&lt;li&gt;当你在 Gruntfile 文件正确配置好了任务，任务运行器就会自动帮你或你的小组完成大部分无聊的工作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;模块化工具&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;requirejs、seajs&lt;/li&gt;
+&lt;li&gt;将一些属性比较类似和行为比较类似的内容放在同一个js文件里面，把这个js文件称为模块，了每个js文件只关注与自身有关的事情，让每个js文件各行其职；&lt;/li&gt;
+&lt;li&gt;MVC：veiw ( html + css + js )写静态页面 css、js、img及效果；controller ( 专注于实现服务和逻辑控制的层面叫做控制器 )监听页面中请求和事件，处理请求和事件；向model请求数据，得到数据后绑定到页面；model ( 数据变量 || ajax从服务端取回的数据 )对外提供一些数据&lt;/li&gt;
+&lt;li&gt;命名冲突、文件依赖&lt;img src="http:///content/images/2017/05/k1.jpg" alt="" title=""&gt;&lt;img src="http:///content/images/2017/05/k2.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;类库&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;解决的是代码或者是模块级别的复用或者对复杂度的封装问题，例如将一个解决复杂问题的功能模块封装成一个函数，提供一个简单的接口。&lt;/li&gt;
+&lt;li&gt;它是一种工具，它提供了很多封装好的方法，用与不用取决于我们自身，即使用了也不会影响我们的代码结构。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;框架&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对模式级别的复用和对程序组织的规范。这里的模式是指比如MVC，为了实现M和V的解耦，把复杂的耦合关系由经常变化的业务代码转移到不经常变化的框架内部消化。&lt;/li&gt;
+&lt;li&gt;是面向一个领域来提供一套解决方案，提高开发效率，如果我们选择了使用某框架，就应该遵循该框架所规定的规则。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;区别是&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JQuery以DOM操作为中心，框架，准确来说是MVC框架，是以模型（model）为中心，而DOM操作是附加的。所以，以模型为中心最终达到的目的是带来一整套工作流程的变更，使得后台工程师可以编写前端的模型代码，把后台与前端打通，交互设计师处理UI跟模型的互动关系，UI设计师可以专注、无障碍的处理HTML源码，把它们以界面模板的形式提交给交互工程师。这一整套协作机制能大大提高开发效率。使用MVC框架使得前端任务更好的被解耦。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="bootstrapui"&gt;BootStrap：UI框架&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;响应式布局：响应式web布局是让用户通过不同尺寸的浏览器都可以获得良好视觉的一种方法。通过CSS3 Media Queries（媒体（设备）查询），媒体查询是让页面内容在不同的媒体环境下运行时可以展示不同的样式（这个样式当然是由我们来书写规定的）。@media是CSS3中规定的属性，它可以实现针对不同媒体设备来设置不同的样式的目的。而且就算是在同一设备中它也可以在你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。Bootstrap主要用到min-width、max-width，以及and语法，用于在不同的分辨率下设置不同的CSS样式。&lt;/li&gt;
+&lt;li&gt;移动设备优先：在html文件中head区域加入这样的一个meta标签，name=“viewpoint”是指这个标签对移动设备生效，content中width=device-width是指宽度为设备宽度，initial-scale=1意思是初始缩放比例为1.&lt;/li&gt;
+&lt;li&gt;栅格系统：将一个页面可以拆分成多个区块来理解，而正是这些区块共同构成了真个页面的布局。根据不同的屏幕尺寸情况，调整这些区块的排版，就可以实现响应式设计。另外，屏幕宽度较大的时候，区块倾向于水平分布，而屏幕宽度较小的时候，区块倾向于竖直堆叠。 栅格样式库一般是这样做的：将页面划分为若干等宽的列（column），然后推荐你通过等宽列来创建响应式的页面区块。 Bootstrap把它的栅格放在CSS这个分类下，并称它为Gird system。默认分为12列。
+&lt;img src="http:///content/images/2017/05/k3.jpg" alt=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>浏览器渲染及加载</title><description>&lt;h4 id=""&gt;什么叫加载（下载）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;加载就是下载html文档的过程，本质是下载&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;什么叫渲染（显示）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;渲染是浏览器根据html文档把html元素显示的过程&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;什么叫解析（解释）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;用户访问网页都发生了什么&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址；&lt;/li&gt;
+&lt;li&gt;客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求；&lt;/li&gt;
+&lt;li&gt;网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器；&lt;/li&gt;
+&lt;li&gt;网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器；&lt;/li&gt;
+&lt;li&gt;浏览器解析http&lt;/li&gt;&lt;/ul&gt;</description><link>http:///liu-lan-qi-xuan-ran-ji-jia-zai/</link><guid isPermaLink="false">e9c94de7-2510-4a3f-a1b3-601ba32d89fa</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 01:19:16 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;什么叫加载（下载）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;加载就是下载html文档的过程，本质是下载&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行加载，我们可以在引用外部样式css文件，外部js时，将他们放到合适的位置，使浏览器以最快的速度将文件加载完毕。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;什么叫渲染（显示）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;渲染是浏览器根据html文档把html元素显示的过程&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行渲染，我们可以在构建DOM结构，组织css选择器时，选择最优的写法，提高浏览器的解析速率。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;什么叫解析（解释）？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;下载后的JavaScript文件，和css文件需要对Dom树进行修改，叫做解析过程，对javascript很多时候解析过程就是执行过程。&lt;/li&gt;
+&lt;li&gt;了解浏览器如何进行解析，明白渲染的过程，我们在设置元素属性，编写js文件时，可以减少“重绘”“重新布局”的消耗。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这三个过程在实际进行的时候又不是完全独立，而是会有交叉。会造成一边加载，一边解析，一边渲染的工作现象。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;用户访问网页都发生了什么&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DNS服务器（域名解析系统）会根据用户提供的域名查找对应的IP地址；&lt;/li&gt;
+&lt;li&gt;客户端会向与对应IP地址的网络服务器建立TCP连接并发送一个http请求；&lt;/li&gt;
+&lt;li&gt;网络服务器解析请求，并发送请求给数据库服务器，数据库服务器将请求的资源返回给网络服务器；&lt;/li&gt;
+&lt;li&gt;网络服务器解析数据，并生成html文件，放入http response中，返回给浏览器；&lt;/li&gt;
+&lt;li&gt;浏览器解析http response，下载html文件，以及html文件内包含的外部引用文件，及文件内涉及的图片或者多媒体文件。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;浏览器渲染页面和解析加载页面机制&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当浏览器获得一个html文件时，会“自上而下”加载，并在加载过程中进行解析渲染。
+&lt;ul&gt;&lt;li&gt;浏览器会将HTML解析成一个DOM树，DOM 树的构建过程是一个深度遍历过程：当前节点的所有子节点都构建好后才会去构建当前节点的下一个兄弟节点；&lt;/li&gt;
+&lt;li&gt;将CSS解析成 CSS Rule Tree 。&lt;/li&gt;
+&lt;li&gt;根据DOM树和CSSOM来构造 Rendering Tree。注意：Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。&lt;/li&gt;
+&lt;li&gt;有了Render Tree，浏览器已经能知道网页中有哪些节点、各个节点的CSS定义以及他们的从属关系。下一步操作称之为Layout，顾名思义就是计算出每个节点在屏幕中的位置。&lt;/li&gt;
+&lt;li&gt;再下一步就是绘制，即遍历render树，并使用UI后端层绘制每个节点。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;上述这个过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的html都解析完成之后再去构建和布局render树。它是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;回流与重绘&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reflow（回流）浏览器要花时间去渲染，当它发现了某个部分发生了变化影响了布局，那就需要倒回去重新渲染。&lt;/li&gt;
+&lt;li&gt;Repaint（重绘）：如果只是改变了某个元素的背景颜色，文字颜色等，不影响元素周围或内部布局的属性，将只会引起浏览器的repaint，重画某一部分。Reflow要比Repaint更花费时间，也就更影响性能。所以在写代码的时候，要尽量避免过多的Reflow。&lt;/li&gt;
+&lt;li&gt;reflow的原因：
+&lt;ul&gt;&lt;li&gt;页面初始化的时候； &lt;/li&gt;
+&lt;li&gt;操作DOM时； &lt;/li&gt;
+&lt;li&gt;某些元素的尺寸变了； &lt;/li&gt;
+&lt;li&gt;如果 CSS 的属性发生变化了。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;减少 reflow/repaint
+&lt;ul&gt;&lt;li&gt;不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className。 &lt;/li&gt;
+&lt;li&gt;不要把 DOM 结点的属性值放在一个循环里当成循环里的变量。 &lt;/li&gt;
+&lt;li&gt;为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。 &lt;/li&gt;
+&lt;li&gt;千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="html"&gt;HTML页面加载和解析流程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件； &lt;/li&gt;
+&lt;li&gt;浏览器开始载入html代码，发现&lt;code&gt;＜head＞&lt;/code&gt;标签内有一个&lt;code&gt;＜link＞&lt;/code&gt;标签引用外部CSS文件； &lt;/li&gt;
+&lt;li&gt;浏览器又发出CSS文件的请求，服务器返回这个CSS文件； &lt;/li&gt;
+&lt;li&gt;浏览器继续载入html中&lt;code&gt;＜body＞&lt;/code&gt;部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了； &lt;/li&gt;
+&lt;li&gt;浏览器在代码中发现一个&lt;code&gt;＜img＞&lt;/code&gt;标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码； &lt;/li&gt;
+&lt;li&gt;服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码； &lt;/li&gt;
+&lt;li&gt;浏览器发现了一个包含一行JavaScript代码的&lt;code&gt;＜script＞&lt;/code&gt;标签，赶快运行它； &lt;/li&gt;
+&lt;li&gt;JavaScript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个&lt;code&gt;＜div＞ （style.display=”none”）&lt;/code&gt;。突然少了这么一个元素，浏览器不得不重新渲染这部分代码； &lt;/li&gt;
+&lt;li&gt;终于等到了&lt;code&gt;＜/html＞&lt;/code&gt;的到来，浏览器泪流满面…… &lt;/li&gt;
+&lt;li&gt;等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下&lt;code&gt;＜link＞&lt;/code&gt;标签的CSS路径； &lt;/li&gt;
+&lt;li&gt;浏览器召集了在座的各位&lt;code&gt;＜div＞＜span＞＜ul＞＜li＞&lt;/code&gt;们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="css"&gt;CSS文件解析&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CSS选择符是从右到左进行匹配的。从右到左！&lt;/li&gt;
+&lt;li&gt;所以，&lt;code&gt;#nav li&lt;/code&gt; 我们以为这是一条很简单的规则，秒秒钟就能匹配到想要的元素，但是，但是，但是，是从右往左匹配啊，所以，会去找所有的&lt;code&gt;li&lt;/code&gt;，然后再去确定它的父元素是不是&lt;code&gt;#nav&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;因此，写css的时候需要注意：
+&lt;ul&gt;&lt;li&gt;dom深度尽量浅&lt;/li&gt;
+&lt;li&gt;减少inline javascript、css的数量。&lt;/li&gt;
+&lt;li&gt;使用现代合法的css属性&lt;/li&gt;
+&lt;li&gt;不要为id选择器指定类名或是标签，因为id可以唯一确定一个元素。&lt;/li&gt;
+&lt;li&gt;避免后代选择符，尽量使用子选择符。原因：子元素匹配符的概率要大于后代元素匹配符。后代选择符;&lt;code&gt;#tp p{}&lt;/code&gt; 子选择符：&lt;code&gt;#tp&amp;gt;p{}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;避免使用通配符，举一个例子，&lt;code&gt;.mod .hd *{font-size:14px;}&lt;/code&gt; 根据匹配顺序,将首先匹配通配符,也就是说先匹配出通配符,然后匹配&lt;code&gt;.hd&lt;/code&gt;（就是要对dom树上的所有节点进行遍历他的父级元素）,然后匹配&lt;code&gt;.mod&lt;/code&gt;,这样的性能耗费可想而知.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="javascript"&gt;Javascript的加载和执行的特点&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;载入后马上执行；&lt;/li&gt;
+&lt;li&gt;执行时会阻塞页面后续的内容（包括页面的渲染、其它资源的下载）。原因：因为浏览器需要一个稳定的DOM树结构，而JS中很有可能有 代码直接改变了DOM树结构，比如使用 document.write 或 appendChild,甚至是直接使用的location.href进行跳转，浏览器为了防止出现JS修 改DOM树，需要重新构建DOM树的情况，所以 就会阻塞其他的下载和呈现。&lt;/li&gt;
+&lt;li&gt;减少 JavaScript 对性能的影响的方法
+&lt;ul&gt;&lt;li&gt;将所有的script标签放到页面底部，也就是body闭合标签之前，这能确保在脚本执行前页面已经完成了DOM树渲染。&lt;/li&gt;
+&lt;li&gt;尽可能地合并脚本。页面中的script标签越少，加载也就越快，响应也越迅速。无论是外链脚本还是内嵌脚本都是如此。&lt;/li&gt;
+&lt;li&gt;采用无阻塞下载 JavaScript 脚本的方法：等页面完成加载后，再加载js代码。也就是，在window.load事件发出后开始下载代码。带defer属性的&lt;script&gt;，动态脚本元素。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;&lt;/script&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</content:encoded></item><item><title>前端开发模式</title><description>&lt;h4 id=""&gt;工作模式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。&lt;/li&gt;
+&lt;li&gt;用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。&lt;/li&gt;
+&lt;li&gt;View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。&lt;img src="http:///content/images/2017/05/M1.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="mvc"&gt;MVC&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。&lt;/li&gt;
+&lt;li&gt;用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。
+&lt;ul&gt;&lt;li&gt;把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。&lt;/li&gt;
+&lt;li&gt;Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///qian-duan-kai-fa-mo-shi/</link><guid isPermaLink="false">78bbf9f9-6f8a-4935-b4c3-a8a502214218</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 01:01:22 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;工作模式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。&lt;/li&gt;
+&lt;li&gt;用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。&lt;/li&gt;
+&lt;li&gt;View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。&lt;img src="http:///content/images/2017/05/M1.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="mvc"&gt;MVC&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。&lt;/li&gt;
+&lt;li&gt;用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（Pass calls）；Controller接着会执行相关的业务逻辑，这些业务逻辑可能需要对Model进行相应的操作；当Model变更了以后，会通过观察者模式（Observer Pattern）通知View；View通过观察者模式收到Model变更的消息以后，会向Model请求最新的数据，然后重新更新界面。
+&lt;ul&gt;&lt;li&gt;把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。&lt;/li&gt;
+&lt;li&gt;Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain Model是不一样的。&lt;img src="http:///content/images/2017/05/M2.jpg" alt="" title=""&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="mvp"&gt;MVP&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MVP打破了View原来对于Model的依赖，其余的依赖关系和MVC模式一致。&lt;/li&gt;
+&lt;li&gt;用户对View的操作都会从View交移给Presenter。Presenter同样的会执行相应的业务逻辑，并且对Model进行相应的操作；而这时候Model也是通过观察者模式把自己变更的消息传递出去，但是是传给Presenter而不是View。Presenter获取到Model变更的消息以后，通过View提供的接口更新界面。
+&lt;ul&gt;&lt;li&gt;便于测试。Presenter对View是通过接口进行，在对Presenter进行不依赖UI环境的单元测试的时候。可以通过模拟一个View对象，这个对象只需要实现了View的接口即可。然后依赖注入到Presenter中，单元测试的时候就可以完整的测试Presenter业务逻辑的正确性；View可以进行组件化。在MVP当中，View不依赖Model。这样就可以让View从特定的业务场景中脱离出来，可以说View可以做到对业务逻辑完全无知。它只需要提供一系列接口提供给上层操作。这样就可以做高度可复用的View组件。&lt;/li&gt;
+&lt;li&gt;Presenter中除了业务逻辑以外，还有大量的View-&gt;Model，Model-&gt;View的手动同步逻辑，造成Presenter比较笨重，维护起来会比较困难。&lt;img src="http:///content/images/2017/05/M3.jpg" alt="" title=""&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="mvvm"&gt;MVVM&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以看作是一种特殊的MVP（Passive View）模式，或者说是对MVP模式的一种改良。
+&lt;ul&gt;&lt;li&gt;MVVM的调用关系和MVP一样。但是，在ViewModel当中会有一个叫Binder，或者是Data-binding engine的东西。以前全部由Presenter负责的View和Model之间数据同步操作交由给Binder处理。你只需要在View的模版语法当中，指令式地声明View上的显示的内容是和Model的哪一块数据绑定的。当ViewModel对进行Model更新的时候，Binder会自动把数据更新到View上去，当用户对View进行操作（例如表单输入），Binder也会自动把数据更新到Model上去。这种方式称为：Two-way data-binding，双向数据绑定。可以简单而不恰当地理解为一个模版引擎，但是会根据数据变更实时渲染。&lt;/li&gt;
+&lt;li&gt;MVVM把View和Model的同步逻辑自动化了。以前Presenter负责的View和Model同步不再手动地进行操作，而是交由框架所提供的Binder进行负责。只需要告诉Binder，View显示的数据对应的是Model哪一部分即可。&lt;/li&gt;
+&lt;li&gt;提高可维护性。解决了MVP大量的手动View和Model同步的问题，提供双向绑定机制。提高了代码的可维护性。简化测试。因为同步逻辑是交由Binder做的，View跟着Model同时变更，所以只需要保证Model的正确性，View就正确。大大减少了对View同步更新的测试。&lt;/li&gt;
+&lt;li&gt;过于简单的图形界面不适用，或说牛刀杀鸡。对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高。数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的。&lt;img src="http:///content/images/2017/05/M4.jpg" alt="" title=""&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="spa"&gt;SPA&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;single-page application，它将所有的活动局限于一个Web页面中，仅在该Web页面初始化时加载相应的HTML、JavaScript 和 CSS。&lt;/li&gt;
+&lt;li&gt;一旦页面加载完成了，SPA不会因为用户的操作而进行页面的重新加载或跳转。而是利用 JavaScript 动态的变换HTML的内（采用的是div切换显示和隐藏），从而实现UI与用户的交互。由于避免了页面的重新加载，SPA 可以提供较为流畅的用户体验。&lt;/li&gt;
+&lt;li&gt;得益于ajax，我们可以实现无跳转刷新，又多亏了浏览器的histroy机制，我们用hash的变化从而可以实现推动界面变化。
+&lt;ul&gt;&lt;li&gt;通过hashchange事件，我们可以监视#后面字符，一旦发生改变，就会触发此事件，也是大家常说的URL 的锚部分。&lt;/li&gt;
+&lt;li&gt;局部刷新，这属于AJAX（阿贾克斯）的内容&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;前端模板&lt;/h4&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;将 HTML 代码（View 层）和 JS 代码（Controller 层）混杂在了一起，UI 与逻辑代码混杂在一起，阅读起来会非常吃力。一旦业务复杂起来，或者多人维护的情况下，几乎会失控。
+*而且如果需要拼接的 HTML 代码里有很多引号的话（比如有大量的 href 属性，src 属性），那么就非常容易出错了（这样干过的应该深有体会）。这样一来，如果前端需要改 HTML 代码，只需要改模板即可。这样做的优点很明显，前端 UI 和逻辑代码不再混杂，阅读体验良好，改动起来也方便了许多。&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/M5.jpg" alt="" title=""&gt;&lt;/p&gt;
+  
+  &lt;img src="http:///content/images/2017/05/m6.jpg" alt="" title=""&gt;
+  
+  &lt;hr&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title>前后端联合开发</title><description>&lt;h4 id=""&gt;开发流程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Front-end Integrated Solution（前端集成解决方案）&lt;/li&gt;
+&lt;li&gt;规范与设计&lt;/li&gt;
+&lt;li&gt;技术选型
+&lt;ul&gt;&lt;li&gt;选择前端模块化框架（seajs, requirejs, ...）&lt;/li&gt;
+&lt;li&gt;选择前端基础库（jquery, tangram, ...）&lt;/li&gt;
+&lt;li&gt;选择模板语言（php, smarty, ...）&lt;/li&gt;
+&lt;li&gt;选择模板插件（xss修复）&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;自动化与拆分
+&lt;ul&gt;&lt;li&gt;选择或开发自动化工具（打包，压缩，校验）&lt;/li&gt;
+&lt;li&gt;将系统拆分为几个子系统，以便大团队并行开发&lt;/li&gt;
+&lt;li&gt;适当调整框架以适应工具产出&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;性能优化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;前后端分离与协同&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。&lt;/li&gt;
+&lt;li&gt;另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。&lt;/li&gt;
+&lt;li&gt;中间件，基于NodeJS的前后端分离&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;页面优化&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。&lt;/li&gt;
+&lt;li&gt;从服务商角度而言，&lt;/li&gt;&lt;/ul&gt;</description><link>http:///qian-hou-duan-lian-he-kai-fa/</link><guid isPermaLink="false">5b7fc258-0d0b-4051-8b8b-e70b58bb0566</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 00:50:52 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;开发流程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Front-end Integrated Solution（前端集成解决方案）&lt;/li&gt;
+&lt;li&gt;规范与设计&lt;/li&gt;
+&lt;li&gt;技术选型
+&lt;ul&gt;&lt;li&gt;选择前端模块化框架（seajs, requirejs, ...）&lt;/li&gt;
+&lt;li&gt;选择前端基础库（jquery, tangram, ...）&lt;/li&gt;
+&lt;li&gt;选择模板语言（php, smarty, ...）&lt;/li&gt;
+&lt;li&gt;选择模板插件（xss修复）&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;自动化与拆分
+&lt;ul&gt;&lt;li&gt;选择或开发自动化工具（打包，压缩，校验）&lt;/li&gt;
+&lt;li&gt;将系统拆分为几个子系统，以便大团队并行开发&lt;/li&gt;
+&lt;li&gt;适当调整框架以适应工具产出&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;性能优化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;前后端分离与协同&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。&lt;/li&gt;
+&lt;li&gt;另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。&lt;/li&gt;
+&lt;li&gt;中间件，基于NodeJS的前后端分离&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;页面优化&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。&lt;/li&gt;
+&lt;li&gt;从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。&lt;/li&gt;
+&lt;li&gt;前端优化的途径有很多，按粒度大致可以分为两类，第一类是页面级别的优化，例如HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等;第二类则是代码级别的优化，例如Javascript中的DOM操作优化、CSS选择符优化、图片优化以及HTML结构优化等等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="html"&gt;HTML语义化&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="ajax"&gt;AJAX&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签来调用服务器提供的js脚本。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;模块化&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;解决命名冲突（YUI ）、文件依赖（Sea.js）&lt;/li&gt;
+&lt;li&gt;数据模块的加载&lt;/li&gt;
+&lt;li&gt;解析模块的层次依赖关系&lt;/li&gt;
+&lt;li&gt;添加事件机制，优化管理代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>前端性能</title><description>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验；&lt;/li&gt;
+&lt;li&gt;从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;优化途径&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;按粒度大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等；&lt;/li&gt;
+&lt;li&gt;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、CSS选择符优化、图片优化以及 HTML结构优化等等。&lt;/li&gt;
+&lt;li&gt;减少 HTTP请求数：一个完整的请求都需要经过 DNS寻址、与服务器建立连接、发送数据、等待服务器响应、接收数据这样一个 “漫长” 而复杂的过程。
+&lt;ul&gt;&lt;li&gt;页面简单，不需要过多的修饰；&lt;/li&gt;
+&lt;li&gt;合理设置 HTTP缓存：被缓存资源的请求服务器是 304响应，只有 Header没有Body ，可以节省带宽&lt;/li&gt;
+&lt;li&gt;资源合并与压缩：如果可以的话，尽可能的将外部的脚本、样式进行合并，多个合为一个。另外， CSS、 Javascript、&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///qian-duan-xing-neng/</link><guid isPermaLink="false">5f668386-d738-40cf-9201-8a14a7c588d2</guid><dc:creator>Jing HU</dc:creator><pubDate>Fri, 26 May 2017 00:42:09 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验；&lt;/li&gt;
+&lt;li&gt;从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;优化途径&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;按粒度大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等；&lt;/li&gt;
+&lt;li&gt;第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、CSS选择符优化、图片优化以及 HTML结构优化等等。&lt;/li&gt;
+&lt;li&gt;减少 HTTP请求数：一个完整的请求都需要经过 DNS寻址、与服务器建立连接、发送数据、等待服务器响应、接收数据这样一个 “漫长” 而复杂的过程。
+&lt;ul&gt;&lt;li&gt;页面简单，不需要过多的修饰；&lt;/li&gt;
+&lt;li&gt;合理设置 HTTP缓存：被缓存资源的请求服务器是 304响应，只有 Header没有Body ，可以节省带宽&lt;/li&gt;
+&lt;li&gt;资源合并与压缩：如果可以的话，尽可能的将外部的脚本、样式进行合并，多个合为一个。另外， CSS、 Javascript、Image 都可以用相应的工具进行压缩，压缩后往往能省下不少空间。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;将外部脚本置底（将脚本内容在页面信息内容加载后再加载）
+&lt;ul&gt;&lt;li&gt;外链脚本在加载时却会阻塞其他资源，例如在脚本加载完成之前，它后面的图片、样式以及其他脚本都处于阻塞状态，直到脚本加载完成后才会开始加载。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;异步执行 inline脚本(其实原理和上面是一样，保证脚本在页面内容后面加载。)&lt;/li&gt;
+&lt;li&gt;将 CSS放在 HEAD中
+&lt;ul&gt;&lt;li&gt;如果将 CSS放在其他地方比如 BODY中，则浏览器有可能还未下载和解析到 CSS就已经开始渲染页面了，这就导致页面由无 CSS状态跳转到 CSS状态，用户体验比较糟糕。&lt;/li&gt;
+&lt;li&gt;除此之外，有些浏览器会在 CSS下载完成后才开始渲染页面，如果 CSS放在靠下的位置则会导致浏览器将渲染时间推迟。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;DOM 操作优化：DOM操作应该是脚本中最耗性能的一类操作，例如增加、修改、删除 DOM元素或者对 DOM集合进行操作。
+&lt;ul&gt;&lt;li&gt;需要遍历 HTML Collection的时候，尽量将它转为数组后再访问，以提高性能。即使不转换为数组，也请尽可能少的访问它，例如在遍历的时候可以将 length属性、成员保存到局部变量后再使用局部变量。每次使用时都要重新执行查询得到结果；&lt;/li&gt;
+&lt;li&gt;Reflow &amp;amp; Repaint：不要一条一条地修改 DOM 的样式；&lt;/li&gt;
+&lt;li&gt;慎用 with、避免使用 eval和 Function、减少作用域链、查找数据访问。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CSS选择符&lt;/li&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;Image压缩&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>HTML--基础</title><description>&lt;h4 id="doctype"&gt;Doctype&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;标准模式与兼容模式各有什么区别? 
+&lt;ul&gt;&lt;li&gt;&lt;!DOCTYPE&gt;声明位于位于HTML文档中的第一行，处于&lt;html&gt;标签之前，告知浏览器的解析器用什么文档标准解析这个文档。&lt;/html&gt;&lt;/li&gt;
+&lt;li&gt;DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;HTML5 为什么只需要写 &lt;!DOCTYPE HTML&gt;?
+&lt;ul&gt;&lt;li&gt;HTML5 不基于标准通用标记语言SGML(Standard Generalized Markup language)，因此不需要对DTD(Document Type Definition)进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；&lt;/li&gt;
+&lt;li&gt;而HTML4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;标签元素&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;行内元素有哪些？块级元素有哪些？空(void)元素有那些？
+&lt;ul&gt;&lt;li&gt;CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，如div的display默认值为&lt;code&gt;block&lt;/code&gt;，则为块级元素；span默认display属性值为&lt;code&gt;inline&lt;/code&gt;，是行内元素。&lt;/li&gt;
+&lt;li&gt;行内元素有：&lt;code&gt;a&lt;/code&gt; &lt;code&gt;b&lt;/code&gt; &lt;code&gt;span&lt;/code&gt; &lt;code&gt;img&lt;/code&gt; &lt;code&gt;input&lt;/code&gt; &lt;code&gt;select&lt;/code&gt; &lt;code&gt;strong&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;块级元素有：&lt;code&gt;div&lt;/code&gt; &lt;code&gt;ul&lt;/code&gt; &lt;code&gt;ol&lt;/code&gt; &lt;code&gt;li&lt;/code&gt; &lt;code&gt;dl&lt;/code&gt; &lt;code&gt;dt&lt;/code&gt; &lt;code&gt;dd&lt;/code&gt; &lt;code&gt;h1&lt;/code&gt; &lt;code&gt;h2&lt;/code&gt; &lt;code&gt;h3&lt;/code&gt; &lt;code&gt;h4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;常见的空元素：&lt;code&gt;br&lt;/code&gt; &lt;code&gt;hr&lt;/code&gt; &lt;code&gt;img&lt;/code&gt; &lt;code&gt;input&lt;/code&gt; &lt;code&gt;link&lt;/code&gt; &lt;code&gt;meta&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;鲜为人知的是：&lt;code&gt;area&lt;/code&gt; &lt;code&gt;base&lt;/code&gt; &lt;code&gt;col&lt;/code&gt; &lt;code&gt;command&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///html/</link><guid isPermaLink="false">161ca586-b0cd-4404-8ab6-8782ae07f549</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 08:49:28 GMT</pubDate><content:encoded>&lt;h4 id="doctype"&gt;Doctype&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;标准模式与兼容模式各有什么区别? 
+&lt;ul&gt;&lt;li&gt;&lt;!DOCTYPE&gt;声明位于位于HTML文档中的第一行，处于&lt;html&gt;标签之前，告知浏览器的解析器用什么文档标准解析这个文档。&lt;/html&gt;&lt;/li&gt;
+&lt;li&gt;DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;HTML5 为什么只需要写 &lt;!DOCTYPE HTML&gt;?
+&lt;ul&gt;&lt;li&gt;HTML5 不基于标准通用标记语言SGML(Standard Generalized Markup language)，因此不需要对DTD(Document Type Definition)进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；&lt;/li&gt;
+&lt;li&gt;而HTML4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;标签元素&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;行内元素有哪些？块级元素有哪些？空(void)元素有那些？
+&lt;ul&gt;&lt;li&gt;CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，如div的display默认值为&lt;code&gt;block&lt;/code&gt;，则为块级元素；span默认display属性值为&lt;code&gt;inline&lt;/code&gt;，是行内元素。&lt;/li&gt;
+&lt;li&gt;行内元素有：&lt;code&gt;a&lt;/code&gt; &lt;code&gt;b&lt;/code&gt; &lt;code&gt;span&lt;/code&gt; &lt;code&gt;img&lt;/code&gt; &lt;code&gt;input&lt;/code&gt; &lt;code&gt;select&lt;/code&gt; &lt;code&gt;strong&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;块级元素有：&lt;code&gt;div&lt;/code&gt; &lt;code&gt;ul&lt;/code&gt; &lt;code&gt;ol&lt;/code&gt; &lt;code&gt;li&lt;/code&gt; &lt;code&gt;dl&lt;/code&gt; &lt;code&gt;dt&lt;/code&gt; &lt;code&gt;dd&lt;/code&gt; &lt;code&gt;h1&lt;/code&gt; &lt;code&gt;h2&lt;/code&gt; &lt;code&gt;h3&lt;/code&gt; &lt;code&gt;h4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;常见的空元素：&lt;code&gt;br&lt;/code&gt; &lt;code&gt;hr&lt;/code&gt; &lt;code&gt;img&lt;/code&gt; &lt;code&gt;input&lt;/code&gt; &lt;code&gt;link&lt;/code&gt; &lt;code&gt;meta&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;鲜为人知的是：&lt;code&gt;area&lt;/code&gt; &lt;code&gt;base&lt;/code&gt; &lt;code&gt;col&lt;/code&gt; &lt;code&gt;command&lt;/code&gt; &lt;code&gt;embed&lt;/code&gt; &lt;code&gt;keygen&lt;/code&gt; &lt;code&gt;param&lt;/code&gt; &lt;code&gt;source&lt;/code&gt; &lt;code&gt;track&lt;/code&gt; &lt;code&gt;wbr&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="linkimport"&gt;页面导入样式时，使用link和@import有什么区别？&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;link属于XHTML标签，除了加载CSS外，还能用于定义RSS，定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS；&lt;/li&gt;
+&lt;li&gt;页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载；&lt;/li&gt;
+&lt;li&gt;import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;浏览器内核&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。&lt;/li&gt;
+&lt;li&gt;渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。&lt;/li&gt;
+&lt;li&gt;JS引擎则：解析和执行javascript来实现网页的动态效果。最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。&lt;/li&gt;
+&lt;li&gt;常见的浏览器内核有哪些？
+&lt;ul&gt;&lt;li&gt;Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]；&lt;/li&gt;
+&lt;li&gt;Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等；&lt;/li&gt;
+&lt;li&gt;Presto内核：Opera7及以上。[Opera内核原为：Presto，现为：Blink;]；&lt;/li&gt;
+&lt;li&gt;Webkit内核：Safari,Chrome等。 [ Chrome的：Blink（WebKit的分支）]&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="html5"&gt;HTML5新特性&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src="http:///content/images/2017/05/h1.jpg" alt="" title=""&gt;&lt;/p&gt;
+
+&lt;p&gt;用webWorker来处理一些比较耗时的计算，postMessage(data)：子线程与主线程之间互相通信使用方法，传递的data为任意值。terminate()：主线程中终止worker，此后无法再利用其进行消息传递。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="html5"&gt;HTML5的离线储存&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。&lt;/li&gt;
+&lt;li&gt;原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。&lt;/li&gt;
+&lt;li&gt;如何使用
+&lt;ul&gt;&lt;li&gt;页面头部像下面一样加入一个manifest的属性；&lt;/li&gt;
+&lt;li&gt;在cache.manifest文件的编写离线存储的资源；&lt;/li&gt;
+&lt;li&gt;在离线状态时，操作window.applicationCache进行需求实现。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id="cachemanifest"&gt;CACHE MANIFEST&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;v0.11
+CACHE:
+    js/app.js
+    css/style.css
+NETWORK:
+    resourse/logo.png
+FALLBACK:
+    //offline.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="html5"&gt;浏览器对HTML5的离线储存资源进行管理和加载&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件。&lt;/li&gt;
+&lt;li&gt;如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。&lt;/li&gt;
+&lt;li&gt;如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。离线的情况下，浏览器就直接使用离线存储的资源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="cookiessessionstoragelocalstorage"&gt;cookies、sessionStorage 和 localStorage&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密），cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。&lt;/li&gt;
+&lt;li&gt;存储大小：cookie数据大小不能超过4k。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。&lt;/li&gt;
+&lt;li&gt;有期时间：localStorage：存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；sessionStorage：数据在当前浏览器窗口关闭后自动删除。Cookie：设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="iframe"&gt;Iframe&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;window 的 onload 事件需要在所有 iframe 加载完毕后(包含里面的元素)才会触发。iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。&lt;/li&gt;
+&lt;li&gt;搜索引擎的检索程序无法解读这种页面，不利于SEO(Search Engine Optimization);&lt;/li&gt;
+&lt;li&gt;如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以绕开以上两个问题。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="label"&gt;Label&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;label for="Name"&amp;gt;Number:&amp;lt;/label&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;input type=“text“name="Name" id="Name"/&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;label&amp;gt;Date:&amp;lt;input type="text" name="B"/&amp;gt;&amp;lt;/label&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="html5form"&gt;HTML5的form关闭自动完成功能&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给不想要提示的 form 或某个 input 设置为 &lt;code&gt;autocomplete=off&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;浏览器内多个标签页之间的通信&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WebSocket、SharedWorker；&lt;/li&gt;
+&lt;li&gt;可以调用localstorge、cookies等本地存储方式；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;localstorge另一个浏览上下文里被添加、修改或删除时，它会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/h2.jpg" alt="" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/h3.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;webSocket：ajax轮询 需要服务器有很快的处理速度和资源。（速度）long poll 需要有很高的并发，也就是说同时接待客户的能力。（场地大小）就变成了这样，只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。（在程序设计中，这种设计叫做回调，即：你有信息了再来通知我，而不是我傻乎乎的每次跑来问你 ）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;如何兼容低浏览器？(阿里) Adobe Flash Socket 、ActiveX HTMLFile (IE) 、基于 multipart 编码发送 XHR 、基于长轮询的 XHR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="pagevisibilityapi"&gt;页面可见性（Page Visibility API）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
+&lt;img src="http:///content/images/2017/05/h4.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;在页面上实现一个圆形的可点击区域&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;map+area或者svg；&lt;/li&gt;
+&lt;li&gt;border-radius；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http:///content/images/2017/05/h5.jpg" alt="" title=""&gt;
+&lt;img src="http:///content/images/2017/05/h6.jpg" alt="" title=""&gt;
+&lt;img src="http:///content/images/2017/05/h7.jpg" alt="" title=""&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;画线&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;div style="height:1px;overflow:hidden;background:red"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;网页验证码&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水；&lt;/li&gt;
+&lt;li&gt;有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="titleh1bstrongiem"&gt;title与h1、b与strong、i与em的区别&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;属性没有明确意义只表示是个标题，&lt;code&gt;H1&lt;/code&gt;则表示层次明确的标题，对页面信息的抓取也有很大的影响；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strong&lt;/code&gt;是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;会重读，而&lt;code&gt;&amp;lt;B&amp;gt;&lt;/code&gt;是展示强调内容。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;内容展示为斜体，&lt;code&gt;em&lt;/code&gt;表示强调的文本；&lt;/li&gt;
+&lt;li&gt;Physical Style Elements，自然样式标签b, i, u, s, pre；&lt;/li&gt;
+&lt;li&gt;Semantic Style Elements，语义样式标签strong, em, ins, del, code；&lt;/li&gt;
+&lt;li&gt;应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="canvassvg"&gt;canvas与svg&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;canvas：元素本身并没有绘制能力（它仅仅是图形的容器），必须使用脚本来完成实际的绘图任务。Canvas提供的功能更原始，适合像素处理，动态渲染和大数据量绘制。&lt;/li&gt;
+&lt;li&gt;SVG可缩放矢量图形（Scalable Vector Graphics）：基于可扩展标记语言（XML），使用XML文档描述来绘图。SVG功能更完善，适合静态图片展示，高保真文档查看和打印的应用场景。
+&lt;img src="http:///content/images/2017/05/h8.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;缓存清除&lt;/h4&gt;
+
+&lt;p&gt;如何处理缓存，如何清除缓存：浏览器的缓存，有的时候我们需要它来提高网站性能和浏览器速度；但有的时候我们又不得不清除缓存，因为缓存中可能包含一些错误的数据，因此，缓存比较适用于较少更新的网站。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;meta方法&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/h9.jpg" alt="" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;清理form表单的临时缓存：
+&lt;code&gt;&amp;lt;body onLoad="javascript:document.yourFormName.reset()"&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;jquery ajax清除浏览器缓存
+&lt;ul&gt;&lt;li&gt;用ajax请求服务器最新文件，并加上请求头&lt;code&gt;If-Modified-Since&lt;/code&gt;和&lt;code&gt;Cache-Control&lt;/code&gt;
+&lt;img src="http:///content/images/2017/05/h10.jpg" alt="" title=""&gt;&lt;img src="http:///content/images/2017/05/h11.jpg" alt="" title=""&gt;&lt;/li&gt;
+&lt;li&gt;直接用cache:false&lt;/li&gt;
+&lt;li&gt;用随机数：URL 参数后加上 &lt;code&gt;"?ran=" + Math.random()&lt;/code&gt;;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;用php后端清理：在服务端加 &lt;code&gt;header("Cache-Control: no-cache, must-revalidate")&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>HTTP状态码</title><description>&lt;h1 id="contentimages201705httpjpg"&gt;&lt;img src="http:///content/images/2017/05/http.jpg" alt="" title=""&gt;&lt;/h1&gt;
+
+&lt;h4 id="1"&gt;1**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;100 (Continue/继续)：如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。&lt;/li&gt;
+&lt;li&gt;101 (Switching Protocols/转换协议)：指服务器将按照其头信息变为一个不同的协议。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="2"&gt;2**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;200 (OK/正常)：一切正常。一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。&lt;/li&gt;
+&lt;li&gt;201 (Created/已创建)：表示服务器在请求的响应中建立了新文档；应在定位头信息中给出它的URL。&lt;/li&gt;
+&lt;li&gt;202 (Accepted/接受)：)告诉客户端请求正在被执行，但还没有处理完。 &lt;/li&gt;
+&lt;li&gt;203 (Non-Authoritative Information/非官方信息)：表示文档被正常的返回，但是由于正在使用的是文档副本所以某些响应头信息可能不正确。&lt;/li&gt;
+&lt;li&gt;204 (No Content/无内容)：无内容。服务器成功处理，&lt;/li&gt;&lt;/ul&gt;</description><link>http:///httpzhuang-tai-ma/</link><guid isPermaLink="false">612c5836-740c-4833-9080-1fbac1e6bed6</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 08:11:25 GMT</pubDate><content:encoded>&lt;h1 id="contentimages201705httpjpg"&gt;&lt;img src="http:///content/images/2017/05/http.jpg" alt="" title=""&gt;&lt;/h1&gt;
+
+&lt;h4 id="1"&gt;1**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;100 (Continue/继续)：如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。&lt;/li&gt;
+&lt;li&gt;101 (Switching Protocols/转换协议)：指服务器将按照其头信息变为一个不同的协议。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="2"&gt;2**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;200 (OK/正常)：一切正常。一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。&lt;/li&gt;
+&lt;li&gt;201 (Created/已创建)：表示服务器在请求的响应中建立了新文档；应在定位头信息中给出它的URL。&lt;/li&gt;
+&lt;li&gt;202 (Accepted/接受)：)告诉客户端请求正在被执行，但还没有处理完。 &lt;/li&gt;
+&lt;li&gt;203 (Non-Authoritative Information/非官方信息)：表示文档被正常的返回，但是由于正在使用的是文档副本所以某些响应头信息可能不正确。&lt;/li&gt;
+&lt;li&gt;204 (No Content/无内容)：无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档&lt;/li&gt;
+&lt;li&gt;205 (Reset Content/重置内容)：重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。 &lt;/li&gt;
+&lt;li&gt;206 (Partial Content/局部内容)：部分内容。服务器成功处理了部分GET请求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="3"&gt;3**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;300 (Multiple Choices/多重选择)：多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择&lt;/li&gt;
+&lt;li&gt;301 (Moved Permanently)：永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替&lt;/li&gt;
+&lt;li&gt;302 (Found/找到)：临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI&lt;/li&gt;
+&lt;li&gt;303 (See Other/参见其他信息)：查看其它地址。与301类似。使用GET和POST请求查看&lt;/li&gt;
+&lt;li&gt;304 (Not Modified/为修正)：未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源&lt;/li&gt;
+&lt;li&gt;305 (Use Proxy/使用代理)：使用代理。所请求的资源必须通过代理访问&lt;/li&gt;
+&lt;li&gt;307 (Temporary Redirect/临时重定向)：临时重定向。与302类似。使用GET请求重定向。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="4"&gt;4**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;400 (Bad Request/错误请求)：客户端请求的语法错误，服务器无法理解；&lt;/li&gt;
+&lt;li&gt;401 (Unauthorized/未授权)：请求要求用户的身份认证&lt;/li&gt;
+&lt;li&gt;403 (Forbidden/禁止)：服务器理解请求客户端的请求，但是拒绝执行此请求&lt;/li&gt;
+&lt;li&gt;404 (Not Found/未找到)：服务器无法根据客户端的请求找到资源（网页）。&lt;/li&gt;
+&lt;li&gt;405 (Method Not Allowed/方法未允许)：客户端请求中的方法被禁止&lt;/li&gt;
+&lt;li&gt;406 (Not Acceptable/无法访问)：服务器无法根据客户端请求的内容特性完成请求&lt;/li&gt;
+&lt;li&gt;407 (Proxy Authentication Required/代理服务器认证要求)：请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权&lt;/li&gt;
+&lt;li&gt;408 (Request Timeout/请求超时)：服务器等待客户端发送的请求时间过长，超时&lt;/li&gt;
+&lt;li&gt;409 (Conflict/冲突) 服务器完成客户端的PUT请求是可能返回此代码，服务器处理请求时发生了冲突&lt;/li&gt;
+&lt;li&gt;410 (Gone/已经不存在)：客户端请求的资源已经不存在。&lt;/li&gt;
+&lt;li&gt;411 (Length Required/需要数据长度)：服务器无法处理客户端发送的不带Content-Length的请求信息&lt;/li&gt;
+&lt;li&gt;412 (Precondition Failed/先决条件错误)：客户端请求信息的先决条件错误&lt;/li&gt;
+&lt;li&gt;413 (Request Entity Too Large/请求实体过大)：由于请求的实体过大，服务器无法处理，因此拒绝请求。&lt;/li&gt;
+&lt;li&gt;414 (Request URI Too Long/请求URI过长)：请求的URI过长（URI通常为网址），服务器无法处理&lt;/li&gt;
+&lt;li&gt;415 (Unsupported Media Type/不支持的媒体格式)：服务器无法处理请求附带的媒体格式&lt;/li&gt;
+&lt;li&gt;416 (Requested Range Not Satisfiable/请求范围无法满足)：客户端请求的范围无效&lt;/li&gt;
+&lt;li&gt;417 (Expectation Failed/期望失败)：服务器无法满足Expect的请求头信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="5"&gt;5**&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;500 (Internal Server Error/内部服务器错误)：服务器内部错误，无法完成请求&lt;/li&gt;
+&lt;li&gt;501 (Not Implemented/未实现)：服务器不支持请求的功能，无法完成请求&lt;/li&gt;
+&lt;li&gt;502 (Bad Gateway/错误的网关)：接收服务器接收到远端服务器的错误响应&lt;/li&gt;
+&lt;li&gt;503 (Service Unavailable/服务无法获得)：服务器由于在维护或已经超载而无法响应。&lt;/li&gt;
+&lt;li&gt;504 (Gateway Timeout/网关超时)：接收服务器没有从远端服务器得到及时的响应。&lt;/li&gt;
+&lt;li&gt;505 (HTTP Version Not Supported/不支持的 HTTP 版本)：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>HTTP--基础</title><description>&lt;h4 id="urluri"&gt;URL与URI的区别。&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uniform resource location 统一资源定位符&lt;/li&gt;
+&lt;li&gt;uniform resource identifier 统一资源标识符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;请求报文&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/HTTP1.jpg" alt="2" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=""&gt;响应报文&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/HTTP2.jpg" alt="2" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="getpost"&gt;GET与POST的区别。&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。&lt;/li&gt;
+&lt;li&gt;大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。&lt;/li&gt;
+&lt;li&gt;安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。&lt;/li&gt;
+&lt;li&gt;GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="cookie"&gt;Cookie&lt;/h4&gt;
+
+&lt;p&gt;Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。 &lt;br&gt;
+&lt;img src="http:///content/images/2017/05/HTTP3.jpg" alt="" title=""&gt;&lt;img src="http:///content/images/2017/05/HTTP4.jpg" alt="" title=""&gt;&lt;/p&gt;
+
+&lt;h4 id=""&gt;持久化&lt;/h4&gt;
+
+&lt;p&gt;如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。&lt;/p&gt;</description><link>http:///http/</link><guid isPermaLink="false">6b119d55-f43a-4700-baae-6a3c6bfce937</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 08:07:05 GMT</pubDate><content:encoded>&lt;h4 id="urluri"&gt;URL与URI的区别。&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uniform resource location 统一资源定位符&lt;/li&gt;
+&lt;li&gt;uniform resource identifier 统一资源标识符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;请求报文&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/HTTP1.jpg" alt="2" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=""&gt;响应报文&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/HTTP2.jpg" alt="2" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="getpost"&gt;GET与POST的区别。&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。&lt;/li&gt;
+&lt;li&gt;大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。&lt;/li&gt;
+&lt;li&gt;安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。&lt;/li&gt;
+&lt;li&gt;GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="cookie"&gt;Cookie&lt;/h4&gt;
+
+&lt;p&gt;Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。 &lt;br&gt;
+&lt;img src="http:///content/images/2017/05/HTTP3.jpg" alt="" title=""&gt;&lt;img src="http:///content/images/2017/05/HTTP4.jpg" alt="" title=""&gt;&lt;/p&gt;
+
+&lt;h4 id=""&gt;持久化&lt;/h4&gt;
+
+&lt;p&gt;如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。　当设置成keep-alive，如上面所示的www.baidu.com的http头部信息所示，就会建立一条持久化的连接。不需要每次都建立连接，再中断。
+&lt;img src="http:///content/images/2017/05/HTTP5.jpg" alt="" title=""&gt;&lt;img src="http:///content/images/2017/05/HTTP6.jpg" alt="" title=""&gt;&lt;/p&gt;
+
+&lt;h4 id=""&gt;管道化&lt;/h4&gt;
+
+&lt;p&gt;如果一个http请求，请求了大量的图片等大文件，那么其他的http请求怎么办呢？http可以一次发送多个http请求，然后等待响应连接。不需要排队等候，这样就加快了http的响应时间。&lt;/p&gt;
+
+&lt;h4 id=""&gt;内容编码&lt;/h4&gt;
+
+&lt;p&gt;由于某些报文的内容过大，因此在传输时，为了减少传输的时间，会采取一些压缩的措施。如上面的报文信息中，Accept-Encoding就定义了内容编码的格式：gzip&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;其他传输方式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PUT：传输文件，在请求报文的主体中包含文件内容，然后保存到请求URL指定的位置，有安全问题；&lt;/li&gt;
+&lt;li&gt;HEAD：获得报文首部，不返回报文主体部分，用于确认URI的有效性及资源更新的日期时间等；&lt;/li&gt;
+&lt;li&gt;DELETE：删除文件，DELETE是与PUT相反的方法，是按请求URI删除指定的资源&lt;/li&gt;
+&lt;li&gt;OPYIONS：询问支持的方法，用来查询针对请求URI指定的资源支持的方法&lt;/li&gt;
+&lt;li&gt;TRACE：追踪路径，让web服务器端将之前的请求通信还回给客户端的方法，发送请求时，在Max-Frowards首部字段中填入数值，每经过一个服务器端就-1，当数值为0时，停止传输，最后收到服务器返回状态码200 OK的响应&lt;/li&gt;
+&lt;li&gt;CONNECT：要求采用隧道协议连接代理，该方法要求在于代理服务器通信时建立隧道，实现用隧道协议进行TCP通信，主要使用SSL（安全套接层）和TLS（传输层安全）协议把通信内容加密后经过网络传输。&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>JS--BOM</title><description>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。&lt;/li&gt;
+&lt;li&gt;window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/b1.jpg" alt="" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h4 id="window"&gt;window对象&lt;/h4&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。&lt;/li&gt;
+&lt;li&gt;Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。&lt;/li&gt;&lt;/ul&gt;</description><link>http:///js_bom/</link><guid isPermaLink="false">f00b557c-db3c-40a5-ae2f-a564b3379a68</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 06:45:51 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。&lt;/li&gt;
+&lt;li&gt;window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/b1.jpg" alt="" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h4 id="window"&gt;window对象&lt;/h4&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。&lt;/li&gt;
+&lt;li&gt;Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。&lt;/li&gt;
+&lt;li&gt;每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进行访问。document对象可以理解为HTML文件在JavaScript中的一个实例。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>JS--DOM&amp;Event</title><description>&lt;h4 id="jsdom"&gt;JS操作DOM树&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建新元素：&lt;code&gt;document.createElement(elementTagName)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加：&lt;code&gt;appendChild(newElement)&lt;/code&gt;和&lt;code&gt;insertBefore(newElement,beforeWhichElement)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除：&lt;code&gt;removeChild(element)&lt;/code&gt; 先找到父元素，然后删除子元素&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;移动&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/d1.jpg" alt="move" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/d2.jpg" alt="move" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;复制：&lt;code&gt;cloneNode(cloneChildNodes)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;查找
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/d3.jpg" alt="move" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr&gt;
+
+
+&lt;h4 id=""&gt;事件流&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。&lt;/li&gt;
+&lt;li&gt;冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="dom"&gt;DOM事件流&lt;/h4&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段&lt;/li&gt;
+&lt;li&gt;事件绑定的写法
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;document.getElementById("test").onclick = function(e){}&lt;/code&gt;，后续添加的事件会覆盖前面的，无法绑定多个事件；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;addEventListener&lt;/code&gt;和&lt;code&gt;removeEventListener&lt;/code&gt;，最后一个参数是布尔型，&lt;code&gt;true&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description><link>http:///js_dom-event/</link><guid isPermaLink="false">224c291c-d0d1-4c87-8588-ab2026a8375d</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 06:42:31 GMT</pubDate><content:encoded>&lt;h4 id="jsdom"&gt;JS操作DOM树&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建新元素：&lt;code&gt;document.createElement(elementTagName)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加：&lt;code&gt;appendChild(newElement)&lt;/code&gt;和&lt;code&gt;insertBefore(newElement,beforeWhichElement)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除：&lt;code&gt;removeChild(element)&lt;/code&gt; 先找到父元素，然后删除子元素&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;移动&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/d1.jpg" alt="move" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/d2.jpg" alt="move" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;复制：&lt;code&gt;cloneNode(cloneChildNodes)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;查找
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/d3.jpg" alt="move" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr&gt;
+
+
+&lt;h4 id=""&gt;事件流&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。&lt;/li&gt;
+&lt;li&gt;冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="dom"&gt;DOM事件流&lt;/h4&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段&lt;/li&gt;
+&lt;li&gt;事件绑定的写法
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;document.getElementById("test").onclick = function(e){}&lt;/code&gt;，后续添加的事件会覆盖前面的，无法绑定多个事件；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;addEventListener&lt;/code&gt;和&lt;code&gt;removeEventListener&lt;/code&gt;，最后一个参数是布尔型，&lt;code&gt;true&lt;/code&gt;代表捕获事件，&lt;code&gt;false&lt;/code&gt;代表冒泡事件。&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/d4.jpg" alt="" title=""&gt;
+  
+  &lt;hr&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title>JS--JSON</title><description>&lt;h4 id="jsonxml"&gt;为什么使用JSON而不是XML&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;JavaScript Object Notation&lt;/code&gt;，意思是JavaScript对象表示法，它是一种基于文本，独立于语言的轻量级数据交换格式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;XML&lt;/code&gt;也是一种数据交换格式，虽然可以作为跨平台的数据交换格式，但是在JS中处理XML非常不方便，同时XML标记比数据多，增加了交换产生的流量，而JSON没有附加的任何标记，在JS中可作为对象处理，所以我们更倾向于选择JSON来交换数据。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="jsonjavascriptobjectnotation"&gt;JSON：JavaScript Object Notation，数据交换格式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Json字符串：符合json格式要求的js字符串；
+&lt;code&gt;var jsonStr = '{"name": "hujing", "age": 29}'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Json对象：指符合json格式要求的js对象，可以包含简单值、对象以及数组；
+&lt;code&gt;var jsonObj = {"name": "hujing","age": 29}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="jsonjson"&gt;JSON字符串转换成JSON对象（解析）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;eval()&lt;/code&gt;函数：解析、解释并返回对象和数组，但是效率较低且存在风险，可能会用来执行一些恶意代码；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JSON.&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///js-json/</link><guid isPermaLink="false">45daac11-a19d-4773-b916-128fbb98d4f1</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 03:02:21 GMT</pubDate><content:encoded>&lt;h4 id="jsonxml"&gt;为什么使用JSON而不是XML&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;JavaScript Object Notation&lt;/code&gt;，意思是JavaScript对象表示法，它是一种基于文本，独立于语言的轻量级数据交换格式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;XML&lt;/code&gt;也是一种数据交换格式，虽然可以作为跨平台的数据交换格式，但是在JS中处理XML非常不方便，同时XML标记比数据多，增加了交换产生的流量，而JSON没有附加的任何标记，在JS中可作为对象处理，所以我们更倾向于选择JSON来交换数据。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="jsonjavascriptobjectnotation"&gt;JSON：JavaScript Object Notation，数据交换格式&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Json字符串：符合json格式要求的js字符串；
+&lt;code&gt;var jsonStr = '{"name": "hujing", "age": 29}'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Json对象：指符合json格式要求的js对象，可以包含简单值、对象以及数组；
+&lt;code&gt;var jsonObj = {"name": "hujing","age": 29}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="jsonjson"&gt;JSON字符串转换成JSON对象（解析）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;eval()&lt;/code&gt;函数：解析、解释并返回对象和数组，但是效率较低且存在风险，可能会用来执行一些恶意代码；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JSON.parse(jsonStr)&lt;/code&gt;；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="jsonjson"&gt;JSON对象转换成JSON字符串（序列化）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;jsonObj.toString()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JSON.stringify(jsonObj)&lt;/code&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;序列化顺序&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果存在&lt;code&gt;toJSON()&lt;/code&gt;方法且能通过它取得有效的值，则调用该方法。否则，返回对象本身；&lt;/li&gt;
+&lt;li&gt;如果提供了第二个参数，应用这个函数过滤器。传入过滤器的值是1返回的结果；&lt;/li&gt;
+&lt;li&gt;对2返回的每个值进行相应的序列化；&lt;/li&gt;
+&lt;li&gt;如果提供了第三个参数，则执行相应的格式化。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;</content:encoded></item><item><title>JS--AJAX</title><description>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;p&gt;AJAX：异步 JavaScript 和 XML，创建快速动态网页的技术。 &lt;br&gt;
+通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/ja1.jpg" alt="The IE Box" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="xmlhttprequest"&gt;XMLHttpRequest 对象&lt;/h4&gt;
+
+&lt;p&gt;用于在后台与服务器交换数据&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/ja3.jpg" alt="The IE Box" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;三个常用的属性&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Onreadystatechange：存有处理服务器响应的函数&lt;/li&gt;
+&lt;li&gt;readyState：存有服务器响应的状态信息，每当 readyState 改变时，onreadystatechange 函数就会被执行。&lt;/li&gt;
+&lt;li&gt;responseText：取回由服务器返回的数据。
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/ja4.jpg" alt="The IE Box" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h4 id=""&gt;方法&lt;/h4&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;open：规定请求的类型、URL 以及是否异步处理请求&lt;/li&gt;
+&lt;li&gt;send：post方式 需要发送数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="ajax"&gt;AJAX状态值&lt;/h4&gt;
+
+&lt;p&gt;运行AJAX所经历过的几种状态，无论访问是否成功都将响应的步骤，可以理解成为AJAX运行步骤。如：正在发送，正在响应等，由AJAX对象与服务器交互时所得；使用“ajax.&lt;/p&gt;</description><link>http:///js-ajax/</link><guid isPermaLink="false">ef788af4-a4b2-438c-8f1c-b165a66c88fd</guid><dc:creator>Jing HU</dc:creator><pubDate>Thu, 25 May 2017 02:58:12 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;基本概念&lt;/h4&gt;
+
+&lt;p&gt;AJAX：异步 JavaScript 和 XML，创建快速动态网页的技术。 &lt;br&gt;
+通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/ja1.jpg" alt="The IE Box" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="xmlhttprequest"&gt;XMLHttpRequest 对象&lt;/h4&gt;
+
+&lt;p&gt;用于在后台与服务器交换数据&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/ja3.jpg" alt="The IE Box" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;三个常用的属性&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Onreadystatechange：存有处理服务器响应的函数&lt;/li&gt;
+&lt;li&gt;readyState：存有服务器响应的状态信息，每当 readyState 改变时，onreadystatechange 函数就会被执行。&lt;/li&gt;
+&lt;li&gt;responseText：取回由服务器返回的数据。
+
+
+&lt;blockquote&gt;
+  &lt;img src="http:///content/images/2017/05/ja4.jpg" alt="The IE Box" title=""&gt;&lt;/blockquote&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h4 id=""&gt;方法&lt;/h4&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;open：规定请求的类型、URL 以及是否异步处理请求&lt;/li&gt;
+&lt;li&gt;send：post方式 需要发送数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="ajax"&gt;AJAX状态值&lt;/h4&gt;
+
+&lt;p&gt;运行AJAX所经历过的几种状态，无论访问是否成功都将响应的步骤，可以理解成为AJAX运行步骤。如：正在发送，正在响应等，由AJAX对象与服务器交互时所得；使用“ajax.readyState”获得。（由数字1~4单位数字组成）&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/ja5.jpg" alt="The IE Box" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id="ajax"&gt;AJAX状态码说明&lt;/h4&gt;
+
+&lt;p&gt;AJAX状态码是指，无论AJAX访问是否成功，由HTTP协议根据所提交的信息，服务器所返回的HTTP头信息代码，该信息使用“ajax.status”所获得；（由数字1XX,2XX三位数字组成，详细查看RFC）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1**&lt;/code&gt;：请求收到，继续处理&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2**&lt;/code&gt;：操作成功收到，分析、接受&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3**&lt;/code&gt;：完成此请求必须进一步处理&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;4**&lt;/code&gt;：请求包含一个错误语法或不能完成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5**&lt;/code&gt;：服务器执行一个完全有效请求失败&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;优缺点&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用异步方式与服务器通信，页面不需要重新加载，页面无刷新；按需取数据，减少服务器的负担；使得Web应用程序更为迅捷地响应用户交互；浏览器的内容和服务端代码进行分离。页面的内容全部由JAVAScript来控制，服务端负责逻辑的校验和从数据库中拿数据。&lt;/li&gt;
+&lt;li&gt;将服务端的方法暴露出来，黑客可利用这一点进行攻击；大量JS代码，容易出错；Ajax的无刷新重载，由于页面的变化没有刷新重载那么明显，所以容易给用户带来困扰——用户不太清楚现在的数据是新的还是已经更新过的；可能破坏浏览器后退按钮的正常行为；一些手持设备（如手机、PAD等）自带的浏览器现在还不能很好的支持Ajax。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=""&gt;跨域请求&lt;/h4&gt;
+
+&lt;p&gt;同一个ip、同一个网络协议、同一个端口，三者都满足就是同一个域，否则就是跨域问题了。说白点就是post、get的url不是你当前的网站，域名不同。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;同源策略&lt;/li&gt;
+&lt;li&gt;跨域资源共享&lt;/li&gt;
+&lt;li&gt;解决方案
+&lt;ul&gt;&lt;li&gt;CORS 跨源资源共享：&lt;code&gt;Cross-Origin Resource Sharing&lt;/code&gt;（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，是 JSONP 模式的现代版。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。用 CORS 可以让网页设计师用一般的 XMLHttpRequest，这种方式的错误处理比 JSONP 要来的好。另一方面，JSONP 可以在不支持 CORS 的老旧浏览器上运作。现代的浏览器都支持 CORS。&lt;/li&gt;
+&lt;li&gt;JSONP：JSONP 是 JSON 的一种使用模式，可以解决主流浏览器的跨域数据访问问题。其原理是根据 &lt;code&gt;XmlHttpRequest&lt;/code&gt; 对象受到同源策略的影响，而 &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 标签元素却不受同源策略影响，可以加载跨域服务器上的脚本，网页可以从其他来源动态产生 JSON 资料。用 JSONP 获取的不是 JSON 数据，而是可以直接运行的 JavaScript 语句。&lt;/li&gt;
+&lt;li&gt;代理&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>JS--面向对象</title><description>&lt;h4 id=""&gt;创建对象&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j21.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j22.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工厂模式：解决代码重复的问题，cat1和cat2之间没有内在的联系，不能反映出它们是同一个原型对象的实例。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j23.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j24.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;构造函数模式：所谓"构造函数"，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。构造函数方法很好用，但是存在一个浪费内存的问题，相同的属性和方法每次都要生成。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j25.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j26.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j27.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j28.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Prototype（混合）模式：Javascript规定，每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承，我们可以把那些不变的属性和方法，直接定义在prototype对象上。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j29.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j210.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;继承&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原型对象：最重要的作用就是把常量和方法独立到自身里，供给其它实例使用。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j211.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;原型链：JavaScritp引擎在访问对象的属性时，如果在对象本身中没有找到，则会去原型链中查找，如果找到，直接返回值，如果整个链都遍历且没有找到属性，则返回undefined。原型链一般实现为一个链表，这样就可以按照一定的顺序来查找。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><link>http:///js-mian-xiang-dui-xiang/</link><guid isPermaLink="false">6a54e87e-049c-4ee1-8e79-525769b1baa2</guid><dc:creator>Jing HU</dc:creator><pubDate>Wed, 24 May 2017 02:23:03 GMT</pubDate><content:encoded>&lt;h4 id=""&gt;创建对象&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j21.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j22.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工厂模式：解决代码重复的问题，cat1和cat2之间没有内在的联系，不能反映出它们是同一个原型对象的实例。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j23.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j24.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;构造函数模式：所谓"构造函数"，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。构造函数方法很好用，但是存在一个浪费内存的问题，相同的属性和方法每次都要生成。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j25.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j26.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j27.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j28.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Prototype（混合）模式：Javascript规定，每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承，我们可以把那些不变的属性和方法，直接定义在prototype对象上。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j29.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j210.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=""&gt;继承&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原型对象：最重要的作用就是把常量和方法独立到自身里，供给其它实例使用。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j211.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;原型链：JavaScritp引擎在访问对象的属性时，如果在对象本身中没有找到，则会去原型链中查找，如果找到，直接返回值，如果整个链都遍历且没有找到属性，则返回undefined。原型链一般实现为一个链表，这样就可以按照一定的顺序来查找。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;继承实现&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;p&gt;Js原型实现继承：引用类型的原型属性（数组、对象等）会被所有实例共享；在创建子类型的实例时，不能向父类的构造函数传递参数。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j212.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;构造函数实现继承&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j214.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;call , apply实现组合继承&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j217.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;寄生式继承&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j221.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;寄生组合继承&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j223.jpg" alt="A bowl of bananas" title=""&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id="callapply"&gt;call和apply详解&lt;/h4&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;call和apply都可以实现继承，唯一的一点参数不同，func.call(func1,var1,var2,var3)对应的apply写法为：func.apply(func1,[var1,var2,var3])。&lt;/li&gt;
+&lt;li&gt;call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src="http:///content/images/2017/05/j224.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j225.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;img src="http:///content/images/2017/05/j226.jpg" alt="A bowl of bananas" title=""&gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item></channel></rss>

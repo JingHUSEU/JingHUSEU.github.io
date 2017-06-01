@@ -1,0 +1,307 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JS--数据类型</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///js-shu-ju-lei-xing/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///js-shu-ju-lei-xing/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JS--数据类型">
+    <meta property="og:description" content='基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+" "转化成字符串。 Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。 null表示"没有对象"，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。 类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.'>
+    <meta property="og:url" content="http:///js-shu-ju-lei-xing/">
+    <meta property="article:published_time" content="2017-05-24T01:40:43.000Z">
+    <meta property="article:modified_time" content="2017-05-24T01:40:43.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JS--数据类型">
+    <meta name="twitter:description" content='基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+" "转化成字符串。 Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。 null表示"没有对象"，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。 类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.'>
+    <meta name="twitter:url" content="http:///js-shu-ju-lei-xing/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "JS--数据类型",
+    "url": "http:///js-shu-ju-lei-xing/",
+    "datePublished": "2017-05-24T01:40:43.000Z",
+    "dateModified": "2017-05-24T01:40:43.000Z",
+    "description": "基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+&quot; &quot;转化成字符串。 Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示&quot;无&quot;的对象，转为数值时为0；undefined是一个表示&quot;无&quot;的原始值，转为数值时为NaN。 null表示&quot;没有对象&quot;，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示&quot;缺少值&quot;，就是此处应该有一个值，但是还没有定义。 类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js nav-current"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">JS--数据类型</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-24">24 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">基本数据类型</h4>
+
+<ul>
+<li>Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined；</li>
+<li>Null类型只有一个值null，表示一个空指针，typeof返回object；</li>
+<li><code>Number.MIN_VALUE</code>、<code>Number.MAX_VALUE</code>、<code>Infinity</code>、<code>NaN</code>(与任何值都不相等)；<code>Number()</code>、<code>parseInt()</code>、<code>parseFloat()</code>；</li>
+<li>String的值是不可变的、<code>toString</code>、<code>+" "</code>转化成字符串。</li>
+</ul>
+
+<h4 id="undefinednull">Undefined与null的区别</h4>
+
+<ul>
+<li>JavaScript的最初版本是这样区分的：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。</li>
+<li>null表示"没有对象"，该处不应该有值，用来表示函数企图返回一个不存在的对象。</li>
+<li>undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。</li>
+</ul>
+
+<h4 id="">类型判断</h4>
+
+<ul>
+<li>typeof：返回的类型都是字符串形式</li>
+<li>instanceof：判断已知对象类型的方法</li>
+<li>constructor：根据对象的constructor判断，在类继承时会出错</li>
+<li>prototype：<code>Object.prototype.toString.call(a) === '[object String]'</code></li>
+<li>jquery.type()：<code>jQuery.type( null ) === 'null'</code>。利用Object.toString.call()方法</li>
+</ul>
+
+<h4 id="">操作符</h4>
+
+<ul>
+<li><code>==</code>、<code>!=</code>：先转换再比较，null和undefined相等；</li>
+<li><code>===</code>、<code>!==</code>：仅比较而不转换，类型不同则不相等。</li>
+</ul>
+
+<h4 id="">复合类型</h4>
+
+<ul>
+<li>函数：function；</li>
+<li>数组：Array；<code>push()</code>、<code>pop()</code>、<code>unshift()</code>、<code>shift()</code>、<code>sort(compare)</code>，<code>value1&lt;value2</code> 返回-1表示正序,返回1表示倒序、<code>indexOf()</code>、<code>lastIndexOf()</code>、<code>splice()</code>；</li>
+<li>类：Object，<code>instanceof</code>。</li>
+</ul>
+
+<hr>
+
+<h4 id="">内存管理</h4>
+
+<ul>
+<li>原始值和引用值存储在内存中的位置分别为栈和堆。</li>
+<li>原始值是存储在栈中的简单数据段，他们的值直接存储在变量访问的位置。</li>
+<li>引用值是存储在堆中的对象。存储在栈中的值是一个指针，指向存储在堆中的实际对象。</li>
+<li>栈的优势就是存取速度比堆要快，仅次于直接位于CPU中的寄存器，但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。
+
+
+<blockquote>
+  <img src="/content/images/2017/05/j1.jpg" alt="The IE Box" title=""></blockquote></li>
+  </ul>
+  <hr>
+
+
+<h4 id="">垃圾回收机制</h4>
+
+<ul>
+<li>标记清除：标记清除简单的来说就是给各个变量名打上 YES or NO的标签以供JS引擎进行处理（当然打什么标签自己理解即可）。在和执行上下文类似的的环境中当变量名称进入环境的时候，那么变量会被打上 YES。一般来说是绝对不会释放被打上 YES 标签的变量内存的，一旦变量在出了该环境时，变会被打上 NO 标签（和作用域貌似有点像），JS引擎会在一定时间间隔或者设置的时间来进行扫描，对NO标签的进行剔除以释放其内存。</li>
+<li>引用计数：一般来说，引用计数的含义是跟踪记录每个值被引用的次数。当声明一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数便是1，如果同一个值又被赋给另一个变量，则该值的引用次数加1，相反，如果包含对这个值引用的变量又取得了另一个值，则这个值的引用次数减1。当这个值的引用次数为0时，说明没有办法访问到它了，因而可以将其占用的内存空间回收。</li>
+</ul>
+
+<hr>
+
+<h4 id="">作用域</h4>
+
+<blockquote>
+  <ul>
+  <li>声明提升：JavaScript引擎在执行的时候，会把所有变量的声明都提升到当前作用域的最前面；</li>
+  <li>函数作用域，无块级作用域；</li>
+  <li>作用域链
+  <ul><li>创建函数<img src="/content/images/2017/05/j2.jpg" alt="The IE Box" title=""></li>
+  <li>调用函数<img src="/content/images/2017/05/j3.jpg" alt="The IE Box" title=""></li></ul></li>
+  </ul>
+</blockquote>
+
+<pre><code>.function add(num1,num2) {
+    var sum = num1 + num2;
+    return sum;
+}
+var total = add(5,10);
+</code></pre>
+
+<blockquote>
+  <ul>
+  <li>With改变作用域链<img src="/content/images/2017/05/j4.jpg" alt="The IE Box" title=""></li>
+  </ul>
+</blockquote>
+
+<pre><code>.function initUI(){
+    with(document){
+        var bd=body,
+        links=getElementsByTagName("a"),
+        i=0,
+        len=links.length;
+        while(i &lt; len){
+            update(links[i++]);
+        }
+        getElementById("btnInit").onclick=function(){
+            doSomething();
+        };
+}
+</code></pre>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=JS--%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&amp;url=http:///js-shu-ju-lei-xing/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///js-shu-ju-lei-xing/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///js-shu-ju-lei-xing/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/js-mian-xiang-dui-xiang/">
+        <section class="post">
+            <h2>JS--面向对象</h2>
+            <p>创建对象 原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。       工厂模式：解决代码重复的问题，cat1和cat2之间没有内在的联系，不能反映出它们是同一个原型对象的实例。       构造函数模式：所谓"构造函数"，其实就是一个普通函数，…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/css-animation/">
+        <section class="post">
+            <h2>CSS--Draw</h2>
+            <p>优劣 利用css画图形，是个有利有弊的写法，好处是不用画图，且节省了一些流量，坏处是要写长串的css样式，而且有可能流量并没有减少，用与否视情况而定，个人选择。 三角形      利用了相邻两个边框的接壤处分配原则   如果没有宽度和高度的话，其实应该是四个三角形接成的矩形        .triangle-up {      width: 0;      height: 0;      border-left:…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

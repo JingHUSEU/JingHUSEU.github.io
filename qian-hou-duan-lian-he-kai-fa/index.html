@@ -1,0 +1,255 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>前后端联合开发</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///qian-hou-duan-lian-he-kai-fa/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///qian-hou-duan-lian-he-kai-fa/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="前后端联合开发">
+    <meta property="og:description" content="开发流程 Front-end Integrated Solution（前端集成解决方案） 规范与设计 技术选型 选择前端模块化框架（seajs, requirejs, ...） 选择前端基础库（jquery, tangram, ...） 选择模板语言（php, smarty, ...） 选择模板插件（xss修复） 自动化与拆分 选择或开发自动化工具（打包，压缩，校验） 将系统拆分为几个子系统，以便大团队并行开发 适当调整框架以适应工具产出 性能优化 前后端分离与协同 一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。 另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。 中间件，基于NodeJS的前后端分离 页面优化 从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。 从服务商角度而言，">
+    <meta property="og:url" content="http:///qian-hou-duan-lian-he-kai-fa/">
+    <meta property="article:published_time" content="2017-05-26T00:50:52.000Z">
+    <meta property="article:modified_time" content="2017-05-26T00:50:52.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="前后端联合开发">
+    <meta name="twitter:description" content="开发流程 Front-end Integrated Solution（前端集成解决方案） 规范与设计 技术选型 选择前端模块化框架（seajs, requirejs, ...） 选择前端基础库（jquery, tangram, ...） 选择模板语言（php, smarty, ...） 选择模板插件（xss修复） 自动化与拆分 选择或开发自动化工具（打包，压缩，校验） 将系统拆分为几个子系统，以便大团队并行开发 适当调整框架以适应工具产出 性能优化 前后端分离与协同 一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。 另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。 中间件，基于NodeJS的前后端分离 页面优化 从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。 从服务商角度而言，">
+    <meta name="twitter:url" content="http:///qian-hou-duan-lian-he-kai-fa/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "前后端联合开发",
+    "url": "http:///qian-hou-duan-lian-he-kai-fa/",
+    "datePublished": "2017-05-26T00:50:52.000Z",
+    "dateModified": "2017-05-26T00:50:52.000Z",
+    "description": "开发流程 Front-end Integrated Solution（前端集成解决方案） 规范与设计 技术选型 选择前端模块化框架（seajs, requirejs, ...） 选择前端基础库（jquery, tangram, ...） 选择模板语言（php, smarty, ...） 选择模板插件（xss修复） 自动化与拆分 选择或开发自动化工具（打包，压缩，校验） 将系统拆分为几个子系统，以便大团队并行开发 适当调整框架以适应工具产出 性能优化 前后端分离与协同 一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。 另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。 中间件，基于NodeJS的前后端分离 页面优化 从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。 从服务商角度而言，",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav- nav-current"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">前后端联合开发</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-26">26 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">开发流程</h4>
+
+<ul>
+<li>Front-end Integrated Solution（前端集成解决方案）</li>
+<li>规范与设计</li>
+<li>技术选型
+<ul><li>选择前端模块化框架（seajs, requirejs, ...）</li>
+<li>选择前端基础库（jquery, tangram, ...）</li>
+<li>选择模板语言（php, smarty, ...）</li>
+<li>选择模板插件（xss修复）</li></ul></li>
+<li>自动化与拆分
+<ul><li>选择或开发自动化工具（打包，压缩，校验）</li>
+<li>将系统拆分为几个子系统，以便大团队并行开发</li>
+<li>适当调整框架以适应工具产出</li></ul></li>
+<li>性能优化</li>
+</ul>
+
+<h4 id="">前后端分离与协同</h4>
+
+<ul>
+<li>一种是前端先写一个静态页面，写好后，让后端去套模板。静态页面可以本地开发，也无需考虑业务逻辑只需要实现View即可。不足是还需要后端套模板，这些前端代码后端需要浏览一遍，以免出错。</li>
+<li>另一种协作模式是，前端直接去写模板，这样做的问题在于，前端编写过程中很依赖与后端环境，如果当后端没写完的情况下，前端几乎没法干活。</li>
+<li>中间件，基于NodeJS的前后端分离</li>
+</ul>
+
+<h4 id="">页面优化</h4>
+
+<ul>
+<li>从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。</li>
+<li>从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。</li>
+<li>前端优化的途径有很多，按粒度大致可以分为两类，第一类是页面级别的优化，例如HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等;第二类则是代码级别的优化，例如Javascript中的DOM操作优化、CSS选择符优化、图片优化以及HTML结构优化等等。</li>
+</ul>
+
+<h4 id="html">HTML语义化</h4>
+
+<ul>
+<li>根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。</li>
+</ul>
+
+<h4 id="ajax">AJAX</h4>
+
+<ul>
+<li>通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加<code>&lt;script&gt;</code>标签来调用服务器提供的js脚本。</li>
+</ul>
+
+<h4 id="">模块化</h4>
+
+<ul>
+<li>解决命名冲突（YUI ）、文件依赖（Sea.js）</li>
+<li>数据模块的加载</li>
+<li>解析模块的层次依赖关系</li>
+<li>添加事件机制，优化管理代码</li>
+</ul>
+
+<hr>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=%E5%89%8D%E5%90%8E%E7%AB%AF%E8%81%94%E5%90%88%E5%BC%80%E5%8F%91&amp;url=http:///qian-hou-duan-lian-he-kai-fa/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///qian-hou-duan-lian-he-kai-fa/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///qian-hou-duan-lian-he-kai-fa/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/qian-duan-kai-fa-mo-shi/">
+        <section class="post">
+            <h2>前端开发模式</h2>
+            <p>工作模式 图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。 View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。 MVC 把应用程序分成View、Model层，还额外的加了一个Controller层，它的职责就是专门管理应用程序的业务逻辑。 用户的对View操作以后，View捕获到这个操作，会把处理的权利交移给Controller（…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/qian-duan-xing-neng/">
+        <section class="post">
+            <h2>前端性能</h2>
+            <p>基本概念 从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验； 从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。 优化途径 按粒度大致可以分为两类，第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等； 第二类则是代码级别的优化，例如 Javascript中的DOM…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

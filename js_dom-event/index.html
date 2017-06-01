@@ -1,0 +1,242 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JS--DOM&amp;Event</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///js_dom-event/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///js_dom-event/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JS--DOM&amp;Event">
+    <meta property="og:description" content='JS操作DOM树 创建新元素：document.createElement(elementTagName) 添加：appendChild(newElement)和insertBefore(newElement,beforeWhichElement) 删除：removeChild(element) 先找到父元素，然后删除子元素 移动       复制：cloneNode(cloneChildNodes) 查找          事件流 捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。 冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。 DOM事件流 三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段 事件绑定的写法 document.getElementById("test").onclick = function(e){}，后续添加的事件会覆盖前面的，无法绑定多个事件； addEventListener和removeEventListener，最后一个参数是布尔型，true代表捕获事件，false代表冒泡事件。'>
+    <meta property="og:url" content="http:///js_dom-event/">
+    <meta property="article:published_time" content="2017-05-25T06:42:31.000Z">
+    <meta property="article:modified_time" content="2017-05-25T06:42:40.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JS--DOM&amp;Event">
+    <meta name="twitter:description" content='JS操作DOM树 创建新元素：document.createElement(elementTagName) 添加：appendChild(newElement)和insertBefore(newElement,beforeWhichElement) 删除：removeChild(element) 先找到父元素，然后删除子元素 移动       复制：cloneNode(cloneChildNodes) 查找          事件流 捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。 冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。 DOM事件流 三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段 事件绑定的写法 document.getElementById("test").onclick = function(e){}，后续添加的事件会覆盖前面的，无法绑定多个事件； addEventListener和removeEventListener，最后一个参数是布尔型，true代表捕获事件，false代表冒泡事件。'>
+    <meta name="twitter:url" content="http:///js_dom-event/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "JS--DOM&amp;Event",
+    "url": "http:///js_dom-event/",
+    "datePublished": "2017-05-25T06:42:31.000Z",
+    "dateModified": "2017-05-25T06:42:40.000Z",
+    "description": "JS操作DOM树 创建新元素：document.createElement(elementTagName) 添加：appendChild(newElement)和insertBefore(newElement,beforeWhichElement) 删除：removeChild(element) 先找到父元素，然后删除子元素 移动       复制：cloneNode(cloneChildNodes) 查找          事件流 捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。 冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。 DOM事件流 三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段 事件绑定的写法 document.getElementById(&quot;test&quot;).onclick &#x3D; function(e){}，后续添加的事件会覆盖前面的，无法绑定多个事件； addEventListener和removeEventListener，最后一个参数是布尔型，true代表捕获事件，false代表冒泡事件。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent nav-current"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">JS--DOM&amp;Event</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-25">25 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="jsdom">JS操作DOM树</h4>
+
+<ul>
+<li>创建新元素：<code>document.createElement(elementTagName)</code></li>
+<li>添加：<code>appendChild(newElement)</code>和<code>insertBefore(newElement,beforeWhichElement)</code></li>
+<li>删除：<code>removeChild(element)</code> 先找到父元素，然后删除子元素</li>
+<li><p>移动</p>
+
+<blockquote>
+  <p><img src="/content/images/2017/05/d1.jpg" alt="move" title="">
+  <img src="/content/images/2017/05/d2.jpg" alt="move" title=""></p>
+</blockquote></li>
+<li><p>复制：<code>cloneNode(cloneChildNodes)</code></p></li>
+<li>查找
+
+
+<blockquote>
+  <img src="/content/images/2017/05/d3.jpg" alt="move" title=""></blockquote></li>
+  </ul>
+  <hr>
+
+
+<h4 id="">事件流</h4>
+
+<ul>
+<li>捕获型：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。事件捕获的思想就是不太具体的节点应该更早接收到事件，而最具体的节点最后接收到事件。</li>
+<li>冒泡型：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。</li>
+</ul>
+
+<h4 id="dom">DOM事件流</h4>
+
+<p></p><ul>
+<li>三个阶段：事件捕获阶段+处于目标阶段+事件冒泡阶段</li>
+<li>事件绑定的写法
+<ul><li><code>document.getElementById("test").onclick = function(e){}</code>，后续添加的事件会覆盖前面的，无法绑定多个事件；</li>
+<li><code>addEventListener</code>和<code>removeEventListener</code>，最后一个参数是布尔型，<code>true</code>代表捕获事件，<code>false</code>代表冒泡事件。
+
+<blockquote>
+  <img src="/content/images/2017/05/d4.jpg" alt="" title=""></blockquote></li></ul></li>
+  </ul>
+  <hr>
+
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=JS--DOM%26Event&amp;url=http:///js_dom-event/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///js_dom-event/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///js_dom-event/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/js_bom/">
+        <section class="post">
+            <h2>JS--BOM</h2>
+            <p>基本概念 BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。 window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！         window对象 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/js-json/">
+        <section class="post">
+            <h2>JS--JSON</h2>
+            <p>为什么使用JSON而不是XML JavaScript Object Notation，意思是JavaScript对象表示法，它是一种基于文本，独立于语言的轻量级数据交换格式。 XML也是一种数据交换格式，虽然可以作为跨平台的数据交换格式，但是在JS中处理XML非常不方便，同时XML标记比数据多，增加了交换产生的流量，而JSON没有附加的任何标记，在JS中可作为对象处理，所以我们更倾向于选择JSON来交换数据。 JSON：JavaScript Object Notation，…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>

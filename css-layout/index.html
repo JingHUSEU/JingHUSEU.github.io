@@ -1,0 +1,309 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS--Layout</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=0a987da7ac">
+
+
+    <link rel="canonical" href="http:///css-layout/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http:///css-layout/amp/">
+    
+    <meta property="og:site_name" content="Smiling Dada">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS--Layout">
+    <meta property="og:description" content="两栏布局（左边宽度固定，右边自动适应） 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6) 三栏布局（左右宽度固定，中间自适应宽度） 设置浮动，使文档脱离文档流，注意层的顺序 同样通过负边距来实现，缺点是需要另外增加一个层 也可以通过绝对定位来实现 三栏布局（左右自适应，中间宽度固定） 这个有点变态，一般没这么布局的 居中 水平居中 子元素是块级元素且宽度没有设定：在这种情况下，实际上也不存在水平居中一说，因为子元素是块级元素没有设定宽度，那么它会充满整个父级元素的宽度，即在水平位置上宽度和父元素一致 子元素是行内元素，子元素宽度是由其内容撑开的：给父元素设定text-align:center; 子元素是块级元素且宽度已经设定   给子元素添加margin:0 auto; 上下边界为0，">
+    <meta property="og:url" content="http:///css-layout/">
+    <meta property="article:published_time" content="2017-05-18T06:54:17.000Z">
+    <meta property="article:modified_time" content="2017-05-18T06:54:17.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CSS--Layout">
+    <meta name="twitter:description" content="两栏布局（左边宽度固定，右边自动适应） 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6) 三栏布局（左右宽度固定，中间自适应宽度） 设置浮动，使文档脱离文档流，注意层的顺序 同样通过负边距来实现，缺点是需要另外增加一个层 也可以通过绝对定位来实现 三栏布局（左右自适应，中间宽度固定） 这个有点变态，一般没这么布局的 居中 水平居中 子元素是块级元素且宽度没有设定：在这种情况下，实际上也不存在水平居中一说，因为子元素是块级元素没有设定宽度，那么它会充满整个父级元素的宽度，即在水平位置上宽度和父元素一致 子元素是行内元素，子元素宽度是由其内容撑开的：给父元素设定text-align:center; 子元素是块级元素且宽度已经设定   给子元素添加margin:0 auto; 上下边界为0，">
+    <meta name="twitter:url" content="http:///css-layout/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jing HU">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Smiling Dada",
+        "logo": "http:///ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jing HU",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http:///content/images/2017/05/--_---.jpg",
+            "width": 571,
+            "height": 800
+        },
+        "url": "http:///author/jing/",
+        "sameAs": []
+    },
+    "headline": "CSS--Layout",
+    "url": "http:///css-layout/",
+    "datePublished": "2017-05-18T06:54:17.000Z",
+    "dateModified": "2017-05-18T06:54:17.000Z",
+    "description": "两栏布局（左边宽度固定，右边自动适应） 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6) 三栏布局（左右宽度固定，中间自适应宽度） 设置浮动，使文档脱离文档流，注意层的顺序 同样通过负边距来实现，缺点是需要另外增加一个层 也可以通过绝对定位来实现 三栏布局（左右自适应，中间宽度固定） 这个有点变态，一般没这么布局的 居中 水平居中 子元素是块级元素且宽度没有设定：在这种情况下，实际上也不存在水平居中一说，因为子元素是块级元素没有设定宽度，那么它会充满整个父级元素的宽度，即在水平位置上宽度和父元素一致 子元素是行内元素，子元素宽度是由其内容撑开的：给父元素设定text-align:center; 子元素是块级元素且宽度已经设定   给子元素添加margin:0 auto; 上下边界为0，",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Smiling Dada" href="http:///rss/index.rss">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="http:///welcome-to-ghost/">Home</a></li>
+            <li class="nav-css"><a href="http:///css-ji-chu/">CSS-基础</a></li>
+            <li class="nav-cssfloat"><a href="http:///css-floatfu-dong/">CSS--Float</a></li>
+            <li class="nav-csslayout nav-current"><a href="http:///css-layout/">CSS--Layout</a></li>
+            <li class="nav-cssbfc"><a href="http:///css-bfc/">CSS--BFC</a></li>
+            <li class="nav-cssanimation"><a href="http:///css-draw/">CSS--Animation</a></li>
+            <li class="nav-cssdraw"><a href="http:///css-animation/">CSS--Draw</a></li>
+            <li class="nav-js"><a href="http:///js-shu-ju-lei-xing/">JS--数据类型</a></li>
+            <li class="nav-js"><a href="http:///js-mian-xiang-dui-xiang/">JS--面向对象</a></li>
+            <li class="nav-jsajax"><a href="http:///js-ajax/">JS--AJAX</a></li>
+            <li class="nav-jsjson"><a href="http:///js-json/">JS--JSON</a></li>
+            <li class="nav-jsdomevent"><a href="http:///js_dom-event/">JS--DOM&amp;Event</a></li>
+            <li class="nav-jsbom"><a href="http:///js_bom/">JS--BOM</a></li>
+            <li class="nav-http"><a href="http:///http/">HTTP--基础</a></li>
+            <li class="nav-http"><a href="http:///httpzhuang-tai-ma/">HTTP状态码</a></li>
+            <li class="nav-html"><a href="http:///html/">HTML--基础</a></li>
+            <li class="nav-"><a href="http:///qian-duan-xing-neng/">前端性能</a></li>
+            <li class="nav-"><a href="http:///qian-hou-duan-lian-he-kai-fa/">前后端联合开发</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kai-fa-mo-shi/">前端开发模式</a></li>
+            <li class="nav-"><a href="http:///liu-lan-qi-xuan-ran-ji-jia-zai/">浏览器渲染及加载</a></li>
+            <li class="nav-"><a href="http:///qian-duan-kuang-jia/">前端框架</a></li>
+            <li class="nav-"><a href="http:///jing-dian-mian-shi/">经典面试</a></li>
+            <li class="nav-es6"><a href="http:///es6xin-te-xing/">ES6新特性</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http:///rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">CSS--Layout</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-18">18 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="">两栏布局（左边宽度固定，右边自动适应）</h4>
+
+<ul>
+<li>左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。<img src="/content/images/2017/05/layout_1.jpg" alt="A bowl of bananas" title=""></li>
+<li>使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。<img src="/content/images/2017/05/layout_2.jpg" alt="A bowl of bananas" title=""></li>
+<li>增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6)<img src="/content/images/2017/05/layout_3-1.jpg" alt="A bowl of bananas" title=""></li>
+</ul>
+
+<hr>
+
+<h4 id="">三栏布局（左右宽度固定，中间自适应宽度）</h4>
+
+<ul>
+<li>设置浮动，使文档脱离文档流，注意层的顺序<img src="/content/images/2017/05/layout_4.jpg" alt="A bowl of bananas" title=""></li>
+<li>同样通过负边距来实现，缺点是需要另外增加一个层<img src="/content/images/2017/05/layout_5.jpg" alt="A bowl of bananas" title=""></li>
+<li>也可以通过绝对定位来实现<img src="/content/images/2017/05/layout_6.jpg" alt="A bowl of bananas" title=""></li>
+</ul>
+
+<hr>
+
+<h4 id="">三栏布局（左右自适应，中间宽度固定）</h4>
+
+<ul>
+<li>这个有点变态，一般没这么布局的<img src="/content/images/2017/05/layout_7.jpg" alt="A bowl of bananas" title=""></li>
+</ul>
+
+<hr>
+
+<h4 id="">居中</h4>
+
+<ul>
+<li><p>水平居中
+</p><ul><li>子元素是块级元素且宽度没有设定：在这种情况下，实际上也不存在水平居中一说，因为子元素是块级元素没有设定宽度，那么它会充满整个父级元素的宽度，即在水平位置上宽度和父元素一致</li>
+<li>子元素是行内元素，子元素宽度是由其内容撑开的：给父元素设定text-align:center;</li>
+<li>子元素是块级元素且宽度已经设定
+
+<blockquote>
+  <ul><li>给子元素添加margin:0 auto; 上下边界为0，左右则根据宽度自适应；</li>
+  <li>通过计算指定父元素的padding-left或padding-right</li>
+  <li>计算得到子元素的margin-left或margin-right</li>
+  <li>通过子元素相对父元素绝对定位 box-sizing: border-box; 宽度就是包含border+padding+content</li>
+  <li>利用flex-box <br>
+  <img src="/content/images/2017/05/layout_8.jpg" alt="A bowl of bananas" title=""></li></ul></blockquote></li></ul>
+</li>
+<li><p>垂直居中</p>
+
+<ul><li>子元素是行内元素，高度是由其内容撑开的：设定父元素的line-height为其高度来使得子元素垂直居中；</li>
+<li><p>子元素是块级元素但是子元素高度没有设定，在这种情况下实际上是不知道子元素的高度的，无法通过计算得到padding或margin来调整</p>
+
+<blockquote>
+  <ul><li>通过给父元素设定display:table-cell;vertical-align:middle来解决</li>
+  <li>flexbox <br>
+  <img src="/content/images/2017/05/layout_10.jpg" alt="A bowl of bananas" title=""></li></ul>
+
+<p></p></blockquote></li>
+<li><p>子元素是块级元素且高度已经设定</p>
+
+<p></p><blockquote>
+  <ul><li>计算子元素的margin-top或margin-bottom，计算方法为父(元素高度-子元素高度)/2</li>
+  <li>计算父元素的padding-top或padding-bottom，计算方法为(父元素高度-子元素高度)/2</li>
+  <li>利用绝对定位，让子元素相对于父元素绝对定位</li>
+  <li>利用flexbox <br>
+  <img src="/content/images/2017/05/layout_11.jpg" alt="A bowl of bananas" title=""></li></ul>
+</blockquote></li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="flexflow">flex-flow 详解</h4>
+
+<ul>
+<li>弹性布局是CSS3引入的强大的布局方式</li>
+<li>父类属性
+<ul><li>flex-direction：排列方向row | row-reverse | column | column-reverse;</li>
+<li>flex-wrap：子项在容器内的换行效果nowrap | wrap | wrap-reverse;</li>
+<li>justify-content：子项在容器内水平对齐方式flex-start | flex-end | center | space-between | space-around;</li>
+<li>align-items：子项在容器内垂直对齐方式flex-start | flex-end | center | baseline | stretch;</li>
+<li>align-content：多行子项在容器内整体垂直对齐方式flex-start | flex-end | center | space-between | space-around | stretch;</li></ul></li>
+<li>子类属性
+<ul><li>Order：子项们的排列顺序</li>
+<li>flex-grow：子项宽度之和不足父元素宽度时，子项拉伸的比例</li>
+<li>flex-shrink：子项宽度之和超过父元素宽度时，子项缩放的比例</li>
+<li>flex-basis：子项的初始宽度，若子项宽度之和超过父元素宽度时，子项按照flex-basis的比例缩放</li>
+<li>align-self：单个子项与其他项目不一样的对齐方式</li></ul></li>
+</ul>
+
+<hr>
+
+<h4 id="position">position 定位</h4>
+
+<ul>
+<li>static：取消覆盖之前的定位（position的默认值）</li>
+<li>relative：相对定位，仍然占据原来的位置
+<ul><li>元素设置了relative时，是相对于元素本身位置进行定位</li>
+<li>元素设置了relative后，可以通过“T-R-B-L”改变元素当前所在的位置，但元素移位后，同样点有当初的物理空间位；</li>
+<li>元素设置了relative后，如果没有进行任何的“T-R-B-L”设置，元素不会进行任何位置改变。</li></ul></li>
+<li>absolute：绝对定位
+<ul><li>给元素指定了absolute，整个元素就会漂出文档流，而且元素自身的物理空间也同时消失了。</li>
+<li>绝对定位元素的任何祖先元素没有进行任何的“relative”或者“absolute”设置，那么绝对定位的元素的参考物就是html”</li>
+<li>页面中的其他元素位置也发生了变化。</li></ul></li>
+<li>relative和absolute的结合：如果一个元素绝对定位后，其参照物是以离自身最近元素是否设置了相对定位，如果有设置将以离自己最近元素定位，如果没有将往其祖先元素寻找相对定位元素，一直找到html为止。</li>
+<li>relative和absolute实现布局效果</li>
+<li>设置固定高度</li>
+<li>Float浮动（高度自适应）</li>
+<li>多列浮动</li>
+<li>清除浮动</li>
+</ul>
+
+<hr>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/jing/" style="background-image: url(/content/images/2017/05/--_---.jpg)"><span class="hidden">Jing HU's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/jing/">Jing HU</a></h4>
+
+                    <p>Read <a href="/author/jing/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=CSS--Layout&amp;url=http:///css-layout/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http:///css-layout/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http:///css-layout/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="/css-bfc/">
+        <section class="post">
+            <h2>CSS--BFC</h2>
+            <p>BFC(Block formatting context) 直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 生成元素 根元素 float属性不为none position为absolute或fixed display为inline-block, table-cell, table-caption,…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="/css-floatfu-dong/">
+        <section class="post">
+            <h2>CSS--Float</h2>
+            <p>浮动的理解 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。 首先，在页面上安置标准流元素； 假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)； 如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。 元素浮动之前，也就是在标准流中，是竖向排列的，而浮动之后可以理解为横向排列。 效果…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://">Smiling Dada</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=0a987da7ac"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=0a987da7ac"></script>
+
+</body>
